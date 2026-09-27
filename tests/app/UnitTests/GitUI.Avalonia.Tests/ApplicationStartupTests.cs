@@ -20,18 +20,25 @@ public sealed class ApplicationStartupTests
         Program.ShouldUseWayland(isLinux, waylandDisplay).Should().Be(expected);
     }
 
-    [Test]
-    public void GetGitExtensionsFullPath_should_accept_the_Avalonia_entry_point()
+    [TestCase("GitExtensions.exe")]
+    [TestCase("GitExtensions")]
+    [TestCase("GitExtensions.Avalonia.exe")]
+    [TestCase("GitExtensions.Avalonia")]
+    [TestCase("dotnet.exe")]
+    [TestCase("dotnet")]
+    [TestCase("testhost.exe")]
+    [TestCase("testhost")]
+    public void GetGitExtensionsFullPath_should_accept_expected_entry_points(string executableFileName)
     {
         AppSettings.TestAccessor accessor = AppSettings.GetTestAccessor();
         string originalPath = accessor.ApplicationExecutablePath;
-        string avaloniaPath = Path.Combine(TestContext.CurrentContext.WorkDirectory, "GitExtensions.Avalonia.exe");
+        string candidatePath = Path.Combine(TestContext.CurrentContext.WorkDirectory, executableFileName);
 
         try
         {
-            accessor.ApplicationExecutablePath = avaloniaPath;
+            accessor.ApplicationExecutablePath = candidatePath;
 
-            AppSettings.GetGitExtensionsFullPath().Should().Be(avaloniaPath);
+            AppSettings.GetGitExtensionsFullPath().Should().Be(candidatePath);
         }
         finally
         {
