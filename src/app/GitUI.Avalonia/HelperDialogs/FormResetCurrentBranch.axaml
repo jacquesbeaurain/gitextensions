@@ -91,7 +91,7 @@
 
     <Grid Grid.Row="3"
           ColumnDefinitions="Auto,*">
-      <Button x:Name="_NO_TRANSLATE_Help"
+      <Button Classes="gitextensions-native-dialog-action" x:Name="_NO_TRANSLATE_Help"
               Width="25"
               Height="25"
               Margin="2"

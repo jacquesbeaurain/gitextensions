@@ -91,7 +91,7 @@
       <TextBox x:Name="txtMergeToolPath"
                Grid.Row="6"
                Grid.Column="1" />
-      <Button x:Name="btnMergeToolBrowse"
+      <Button Classes="gitextensions-native-dialog-action" x:Name="btnMergeToolBrowse"
               Grid.Row="6"
               Grid.Column="2"
               Margin="6,0,0,0"
@@ -106,7 +106,7 @@
       <TextBox x:Name="txtMergeToolCommand"
                Grid.Row="7"
                Grid.Column="1" />
-      <Button x:Name="btnMergeToolCommandSuggest"
+      <Button Classes="gitextensions-native-dialog-action" x:Name="btnMergeToolCommandSuggest"
               Grid.Row="7"
               Grid.Column="2"
               Margin="6,0,0,0"
@@ -133,7 +133,7 @@
       <TextBox x:Name="txtDiffToolPath"
                Grid.Row="9"
                Grid.Column="1" />
-      <Button x:Name="btnDiffToolBrowse"
+      <Button Classes="gitextensions-native-dialog-action" x:Name="btnDiffToolBrowse"
               Grid.Row="9"
               Grid.Column="2"
               Margin="6,0,0,0"
@@ -148,7 +148,7 @@
       <TextBox x:Name="txtDiffToolCommand"
                Grid.Row="10"
                Grid.Column="1" />
-      <Button x:Name="btnDiffToolCommandSuggest"
+      <Button Classes="gitextensions-native-dialog-action" x:Name="btnDiffToolCommandSuggest"
               Grid.Row="10"
               Grid.Column="2"
               Margin="6,0,0,0"
@@ -163,7 +163,7 @@
       <TextBox x:Name="txtCommitTemplatePath"
                Grid.Row="11"
                Grid.Column="1" />
-      <Button x:Name="btnCommitTemplateBrowse"
+      <Button Classes="gitextensions-native-dialog-action" x:Name="btnCommitTemplateBrowse"
               Grid.Row="11"
               Grid.Column="2"
               Margin="6,0,0,0"
@@ -199,7 +199,7 @@
                 Grid.Column="1"
                 Width="260"
                 HorizontalAlignment="Left" />
-      <Button x:Name="ConfigureEncoding"
+      <Button Classes="gitextensions-native-dialog-action" x:Name="ConfigureEncoding"
               Grid.Row="13"
               Grid.Column="2"
               Margin="6,0,0,0"

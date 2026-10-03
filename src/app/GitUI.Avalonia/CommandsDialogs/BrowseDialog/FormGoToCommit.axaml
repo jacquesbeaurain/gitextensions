@@ -54,7 +54,7 @@
              Height="23"
              Margin="0,1,0,0"
              VerticalContentAlignment="Center" />
-    <Button x:Name="goButton"
+    <Button Classes="gitextensions-native-dialog-action" x:Name="goButton"
             Grid.Column="4"
             MinWidth="75"
             Height="28"

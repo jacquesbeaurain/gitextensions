@@ -28,12 +28,12 @@
           Grid.Row="1"
           Grid.Column="1"
           RowDefinitions="*,30,30,*">
-      <Button x:Name="ToRight"
+      <Button Classes="gitextensions-native-dialog-action" x:Name="ToRight"
               Grid.Row="1"
               Margin="3"
               IsEnabled="False"
               Content="&gt;" />
-      <Button x:Name="ToLeft"
+      <Button Classes="gitextensions-native-dialog-action" x:Name="ToLeft"
               Grid.Row="2"
               Margin="3"
               IsEnabled="False"

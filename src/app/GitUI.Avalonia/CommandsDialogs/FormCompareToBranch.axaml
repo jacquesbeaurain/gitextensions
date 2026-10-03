@@ -14,7 +14,7 @@
         CanMaximize="False">
   <Canvas Width="434"
           Height="106">
-    <Button x:Name="btnCompare"
+    <Button Classes="gitextensions-native-dialog-action" x:Name="btnCompare"
             Canvas.Left="349"
             Canvas.Top="75"
             Margin="3"

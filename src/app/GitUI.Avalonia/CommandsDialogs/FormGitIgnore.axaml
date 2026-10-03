@@ -26,14 +26,14 @@
                 Grid.Row="1"
                 Margin="0"
                 TabIndex="6">
-          <Button x:Name="AddDefault"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="AddDefault"
                   Canvas.Left="3"
                   Canvas.Top="3"
                   Width="160"
                   Height="27"
                   TabIndex="2"
                   Content="Add default ignores" />
-          <Button x:Name="AddPattern"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="AddPattern"
                   Canvas.Left="169"
                   Canvas.Top="3"
                   Width="160"

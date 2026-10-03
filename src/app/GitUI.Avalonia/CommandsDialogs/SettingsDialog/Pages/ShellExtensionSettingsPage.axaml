@@ -18,12 +18,12 @@
         <StackPanel x:Name="flpnlExplorerIntegration"
                     Orientation="Horizontal"
                     Spacing="0">
-          <Button x:Name="RegisterButton"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="RegisterButton"
                   Width="132"
                   Height="25"
                   Margin="3"
                   Content="_Enable shell extension" />
-          <Button x:Name="UnregisterButton"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="UnregisterButton"
                   Width="135"
                   Height="25"
                   Margin="3"

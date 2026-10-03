@@ -22,7 +22,7 @@
                Grid.Column="1"
                Margin="3"
                VerticalContentAlignment="Center" />
-      <Button x:Name="BrowsePatch"
+      <Button Classes="gitextensions-native-dialog-action" x:Name="BrowsePatch"
               Grid.Column="2"
               Margin="3"
               MinHeight="25"

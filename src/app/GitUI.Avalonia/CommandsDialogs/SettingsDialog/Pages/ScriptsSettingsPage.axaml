@@ -67,7 +67,7 @@
                            Height="26"
                            IsEnabled="False"
                            Icon="{x:Static properties:Images.ArrowDown}" />
-        <Button x:Name="btnArgumentsHelp"
+        <Button Classes="gitextensions-native-dialog-action" x:Name="btnArgumentsHelp"
                 Width="26"
                 Height="26"
                 Padding="0"
@@ -93,7 +93,7 @@
 
             <TextBlock x:Name="_NO_TRANSLATE_lblCommand" Grid.Row="2" VerticalAlignment="Center" Text="Command" />
             <TextBox x:Name="txtCommand" Grid.Row="2" Grid.Column="1" />
-            <Button x:Name="btnBrowseCommand" Grid.Row="2" Grid.Column="2" Margin="5,0,0,0" Content="..." />
+            <Button Classes="gitextensions-native-dialog-action" x:Name="btnBrowseCommand" Grid.Row="2" Grid.Column="2" Margin="5,0,0,0" Content="..." />
 
             <TextBlock x:Name="_NO_TRANSLATE_lblArguments" Grid.Row="3" VerticalAlignment="Top" Text="Arguments" />
             <TextBox x:Name="txtArguments"
@@ -112,7 +112,7 @@
 
             <TextBlock x:Name="_NO_TRANSLATE_lblIconFilePath" Grid.Row="6" VerticalAlignment="Center" Text="Icon or associated file path" />
             <TextBox x:Name="txtIconFilePath" Grid.Row="6" Grid.Column="1" />
-            <Button x:Name="btnBrowseIcon" Grid.Row="6" Grid.Column="2" Margin="5,0,0,0" Content="..." />
+            <Button Classes="gitextensions-native-dialog-action" x:Name="btnBrowseIcon" Grid.Row="6" Grid.Column="2" Margin="5,0,0,0" Content="..." />
           </Grid>
         </GroupBox>
 

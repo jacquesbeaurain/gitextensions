@@ -45,7 +45,7 @@
                  MinWidth="290"
                  Margin="8,0,6,0"
                  MaxLength="250" />
-        <Button x:Name="otherHomeBrowse"
+        <Button Classes="gitextensions-native-dialog-action" x:Name="otherHomeBrowse"
                 compat:TranslationCompat.TranslateText="False"
                 Grid.Row="3"
                 Grid.Column="2"

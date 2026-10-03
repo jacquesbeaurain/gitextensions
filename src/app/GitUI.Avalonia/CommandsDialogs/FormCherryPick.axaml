@@ -26,7 +26,7 @@
               Height="25"
               HorizontalAlignment="Right"
               Content="_Cherry pick" />
-      <Button x:Name="btnAbort"
+      <Button Classes="gitextensions-native-dialog-action" x:Name="btnAbort"
               Margin="0,8,13,8"
               MinWidth="75"
               Width="75"

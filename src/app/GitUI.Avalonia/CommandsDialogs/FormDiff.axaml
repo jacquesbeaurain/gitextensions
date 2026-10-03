@@ -38,7 +38,7 @@
           VerticalAlignment="Top"
           ColumnDefinitions="*,Auto,*"
           RowDefinitions="50,*">
-      <Button x:Name="btnSwap"
+      <Button Classes="gitextensions-native-dialog-action" x:Name="btnSwap"
               Grid.Column="1"
               Margin="10,21,10,0"
               Width="22"
@@ -68,7 +68,7 @@
                   TabIndex="9"
                   VerticalAlignment="Center"
                   Content="Compare to merge _base" />
-        <Button x:Name="btnCompareDirectoriesWithDiffTool"
+        <Button Classes="gitextensions-native-dialog-action" x:Name="btnCompareDirectoriesWithDiffTool"
                 Width="194"
                 Height="25"
                 Padding="0"
@@ -100,7 +100,7 @@
                  TabIndex="14"
                  VerticalAlignment="Top"
                  Background="{DynamicResource GitExtensionsAppColorAnsiTerminalRedBackNormalBrush}" />
-          <Button x:Name="btnAnotherFirstBranch"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="btnAnotherFirstBranch"
                   Margin="3"
                   Width="22"
                   Height="22"
@@ -109,7 +109,7 @@
             <Image Classes="gitextensions-icon-16"
                    Source="{x:Static properties:Images.BranchCheckout}" />
           </Button>
-          <Button x:Name="btnAnotherFirstCommit"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="btnAnotherFirstCommit"
                   Margin="3"
                   Width="22"
                   Height="22"
@@ -145,7 +145,7 @@
                  TabIndex="1"
                  VerticalAlignment="Top"
                  Background="{DynamicResource GitExtensionsAppColorAnsiTerminalGreenBackNormalBrush}" />
-          <Button x:Name="btnAnotherSecondBranch"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="btnAnotherSecondBranch"
                   Margin="3"
                   Width="22"
                   Height="22"
@@ -154,7 +154,7 @@
             <Image Classes="gitextensions-icon-16"
                    Source="{x:Static properties:Images.BranchCheckout}" />
           </Button>
-          <Button x:Name="btnAnotherSecondCommit"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="btnAnotherSecondCommit"
                   Margin="3"
                   Width="22"
                   Height="22"

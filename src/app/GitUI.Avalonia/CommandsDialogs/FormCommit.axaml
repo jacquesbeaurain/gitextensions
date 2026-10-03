@@ -137,7 +137,7 @@
                          IsIndeterminate="True"
                          IsVisible="False" />
           </Grid>
-          <Button x:Name="Cancel"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="Cancel"
                   Grid.Row="1"
                   Width="129"
                   Height="23"
@@ -423,7 +423,7 @@
         </Grid>
       </Grid>
 
-      <Button x:Name="Ok"
+      <Button Classes="gitextensions-native-dialog-action" x:Name="Ok"
               Grid.Column="0"
               Width="75"
               Height="23"

@@ -16,7 +16,7 @@
                      Margin="3,0,12,0"
                      VerticalAlignment="Center"
                      Text="Code font" />
-          <Button x:Name="diffFontChangeButton"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="diffFontChangeButton"
                   Grid.Column="1"
                   HorizontalAlignment="Stretch"
                   Content="font name" />
@@ -31,7 +31,7 @@
                      Margin="3,0,12,0"
                      VerticalAlignment="Center"
                      Text="Application font" />
-          <Button x:Name="applicationFontChangeButton"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="applicationFontChangeButton"
                   Grid.Row="1"
                   Grid.Column="1"
                   HorizontalAlignment="Stretch"
@@ -42,7 +42,7 @@
                      Margin="3,0,12,0"
                      VerticalAlignment="Center"
                      Text="Commit font" />
-          <Button x:Name="commitFontChangeButton"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="commitFontChangeButton"
                   Grid.Row="2"
                   Grid.Column="1"
                   HorizontalAlignment="Stretch"
@@ -53,7 +53,7 @@
                      Margin="3,0,12,0"
                      VerticalAlignment="Center"
                      Text="Monospace font" />
-          <Button x:Name="monospaceFontChangeButton"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="monospaceFontChangeButton"
                   Grid.Row="3"
                   Grid.Column="1"
                   HorizontalAlignment="Stretch"

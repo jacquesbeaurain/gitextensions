@@ -72,7 +72,7 @@
                     Grid.Row="3"
                     Grid.Column="1"
                     HorizontalAlignment="Stretch" />
-          <Button x:Name="avatarProviderHelp"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="avatarProviderHelp"
                   compat:TranslationCompat.TranslateToolTip="False"
                   Grid.Row="3"
                   Grid.Column="2"
@@ -91,7 +91,7 @@
                     Grid.Row="4"
                     Grid.Column="1"
                     HorizontalAlignment="Stretch" />
-          <Button x:Name="pictureAvatarHelp"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="pictureAvatarHelp"
                   compat:TranslationCompat.TranslateToolTip="False"
                   Grid.Row="4"
                   Grid.Column="2"
@@ -109,7 +109,7 @@
           <TextBox x:Name="txtCustomAvatarTemplate"
                    Grid.Row="5"
                    Grid.Column="1" />
-          <Button x:Name="ClearImageCache"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="ClearImageCache"
                   Grid.Row="6"
                   Grid.Column="1"
                   Content="Clear image cache" />

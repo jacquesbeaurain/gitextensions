@@ -13,7 +13,7 @@
                 Header="General">
         <StackPanel x:Name="tlpnlGeneral"
                     Margin="8,4,8,8">
-          <Button x:Name="btnSaveCurrentViewSettingsAsDefault"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="btnSaveCurrentViewSettingsAsDefault"
                   HorizontalAlignment="Left"
                   Content="Save current view settings as default" />
           <CheckBox x:Name="chkRememberIgnoreWhiteSpacePreference"

@@ -27,7 +27,7 @@
                  Text="Find specific commit:" />
       <TextBox x:Name="txtGotoCommit"
                Width="150" />
-      <Button x:Name="buttonGotoCommit"
+      <Button Classes="gitextensions-native-dialog-action" x:Name="buttonGotoCommit"
               Content="Go to commit..." />
     </StackPanel>
 

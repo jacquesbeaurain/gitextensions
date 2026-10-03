@@ -33,7 +33,7 @@
                    Grid.Column="1"
                    MinWidth="260"
                    MaxLength="300" />
-          <Button x:Name="BrowseGitPath"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="BrowseGitPath"
                   Grid.Row="1"
                   Grid.Column="2"
                   Margin="6,0,0,0"
@@ -47,7 +47,7 @@
                    Grid.Row="2"
                    Grid.Column="1"
                    MaxLength="300" />
-          <Button x:Name="BrowseLinuxToolsDir"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="BrowseLinuxToolsDir"
                   Grid.Row="2"
                   Grid.Column="2"
                   Margin="6,0,0,0"
@@ -73,7 +73,7 @@
           <TextBlock x:Name="homeIsSetToLabel"
                      TextWrapping="Wrap"
                      Text="HOME is set to: {0}" />
-          <Button x:Name="ChangeHomeButton"
+          <Button Classes="gitextensions-native-dialog-action" x:Name="ChangeHomeButton"
                   HorizontalAlignment="Left"
                   Content="Change HOME" />
         </StackPanel>

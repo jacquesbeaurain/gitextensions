@@ -35,7 +35,7 @@
                  Grid.Row="2"
                  Grid.Column="1"
                  MinWidth="300" />
-        <Button x:Name="OtherSshBrowse"
+        <Button Classes="gitextensions-native-dialog-action" x:Name="OtherSshBrowse"
                 Grid.Row="2"
                 Grid.Column="2"
                 Content="Browse" />
@@ -56,7 +56,7 @@
                  Grid.Row="0"
                  Grid.Column="1"
                  MinWidth="300" />
-        <Button x:Name="PlinkBrowse"
+        <Button Classes="gitextensions-native-dialog-action" x:Name="PlinkBrowse"
                 Grid.Row="0"
                 Grid.Column="2"
                 Content="Browse" />
@@ -68,7 +68,7 @@
                  Grid.Row="1"
                  Grid.Column="1"
                  MinWidth="300" />
-        <Button x:Name="PuttygenBrowse"
+        <Button Classes="gitextensions-native-dialog-action" x:Name="PuttygenBrowse"
                 Grid.Row="1"
                 Grid.Column="2"
                 Content="Browse" />
@@ -80,7 +80,7 @@
                  Grid.Row="2"
                  Grid.Column="1"
                  MinWidth="300" />
-        <Button x:Name="PageantBrowse"
+        <Button Classes="gitextensions-native-dialog-action" x:Name="PageantBrowse"
                 Grid.Row="2"
                 Grid.Column="2"
                 Content="Browse" />

@@ -54,7 +54,7 @@
               Content="Clear" />
     </Grid>
 
-    <Button x:Name="bResetToDefaults"
+    <Button Classes="gitextensions-native-dialog-action" x:Name="bResetToDefaults"
             Grid.Row="3"
             Width="209"
             Height="26"

@@ -40,7 +40,7 @@
                TabIndex="1"
                VerticalAlignment="Top"
                VerticalContentAlignment="Center" />
-      <Button x:Name="Browse"
+      <Button Classes="gitextensions-native-dialog-action" x:Name="Browse"
               Grid.Column="2"
               Width="64"
               Height="25"
@@ -78,7 +78,7 @@
              TabIndex="1"
              VerticalAlignment="Top" />
     </StackPanel>
-    <Button x:Name="FormatPatch"
+    <Button Classes="gitextensions-native-dialog-action" x:Name="FormatPatch"
             Grid.Row="2"
             Grid.Column="1"
             Width="140"

@@ -20,7 +20,7 @@
               MinWidth="117"
               Height="25"
               Content="_Revert this commit" />
-      <Button x:Name="btnAbort"
+      <Button Classes="gitextensions-native-dialog-action" x:Name="btnAbort"
               MinWidth="75"
               Height="25"
               Content="A_bort" />
