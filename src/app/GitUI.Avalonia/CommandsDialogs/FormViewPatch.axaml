@@ -57,7 +57,7 @@
           </Border>
 
           <ListBox x:Name="GridChangedFiles"
-                   Classes="gitextensions-dense-items"
+                   Classes="gitextensions-dense-items gitextensions-data-grid"
                    Grid.Row="1"
                    Grid.ColumnSpan="3"
                    SelectionMode="Single" />
