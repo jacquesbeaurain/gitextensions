@@ -5,7 +5,9 @@ using GitCommands.Git.Extensions;
 using GitCommands.UserRepositoryHistory;
 using GitExtensions.Extensibility.Git;
 using GitExtUtils;
+using GitUI;
 using GitUI.AutoCompletion;
+using Microsoft.VisualStudio.Threading;
 
 namespace GitExtensionsTests;
 
@@ -18,6 +20,8 @@ public sealed class CommitAutoCompleteProviderTests
     [SetUp]
     public void SetUp()
     {
+        // GitExecutable.RunCommand joins on the main thread, so the fixture must not rely on another fixture having set this up.
+        ThreadHelper.JoinableTaskContext = new JoinableTaskContext();
         _serviceContainer = new ServiceContainer();
         GitExtUtils.ServiceContainerRegistry.RegisterServices(_serviceContainer);
 
@@ -31,7 +35,8 @@ public sealed class CommitAutoCompleteProviderTests
 
         _workingDirectory = Path.Combine(Path.GetTempPath(), $"GitExtensions.AutoComplete.Tests-{Guid.NewGuid():N}");
         string relativePath = Path.GetRelativePath(FindRepositoryRoot(), _workingDirectory);
-        relativePath.StartsWith($"..{Path.DirectorySeparatorChar}", StringComparison.Ordinal).Should().BeTrue(
+        // A temp directory on another drive has no relative path to the repository, so GetRelativePath returns it rooted.
+        (Path.IsPathRooted(relativePath) || relativePath.StartsWith($"..{Path.DirectorySeparatorChar}", StringComparison.Ordinal)).Should().BeTrue(
             "the provider audit repository must live outside the working tree");
         Directory.CreateDirectory(_workingDirectory);
     }
