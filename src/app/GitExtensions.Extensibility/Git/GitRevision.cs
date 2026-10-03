@@ -74,8 +74,10 @@ public sealed partial class GitRevision : IGitItem, INotifyPropertyChanged
     public long CommitUnixTime { get; set; }
     public DateTime CommitDate => FromUnixTimeSeconds(CommitUnixTime);
 
+    // The "no date" sentinel is marked UTC so converting it to a DateTimeOffset does not apply a local
+    // offset, which overflows DateTime.MaxValue in time zones west of UTC.
     private static DateTime FromUnixTimeSeconds(long unixTime)
-        => unixTime == 0 ? DateTime.MaxValue : DateTimeOffset.FromUnixTimeSeconds(unixTime).LocalDateTime;
+        => unixTime == 0 ? DateTime.SpecifyKind(DateTime.MaxValue, DateTimeKind.Utc) : DateTimeOffset.FromUnixTimeSeconds(unixTime).LocalDateTime;
 
     public BuildInfo? BuildStatus
     {
