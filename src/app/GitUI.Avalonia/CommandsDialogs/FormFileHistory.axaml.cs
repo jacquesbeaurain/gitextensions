@@ -335,7 +335,7 @@ public sealed partial class FormFileHistory : GitModuleForm, IRevisionGridFileUp
     }
 
     private void saveAsToolStripMenuItem_Click(object? sender, EventArgs e)
-        => ThreadHelper.FileAndForget(SaveSelectedRevisionAsAsync);
+        => this.InvokeAndForget(SaveSelectedRevisionAsAsync);
 
     private async Task SaveSelectedRevisionAsAsync()
     {

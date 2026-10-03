@@ -904,7 +904,7 @@ public partial class FileStatusList : GitModuleControl
         FileStatusItem selected = SelectedFileStatusItem
             ?? throw new InvalidOperationException("A submodule must be selected.");
         string submoduleName = selected.Item.Name;
-        GitSubmoduleStatus? status = await selected.Item.GetSubmoduleStatusAsync().ConfigureAwait(false);
+        GitSubmoduleStatus? status = await selected.Item.GetSubmoduleStatusAsync();
         ObjectId selectedId = selected.SecondRevision.ObjectId == ObjectId.WorkTreeId
             ? ObjectId.WorkTreeId
             : status?.Commit ?? default;

@@ -195,7 +195,7 @@ public sealed partial class FormGitCommandLog : GitExtensionsForm
     // StorageProvider like the other Avalonia dialogs and keep the same output shape.
     private void mnuSaveToFile_Click(object? sender, EventArgs e)
     {
-        ThreadHelper.FileAndForget(SaveToFileAsync);
+        this.InvokeAndForget(SaveToFileAsync);
     }
 
     private async Task SaveToFileAsync()
