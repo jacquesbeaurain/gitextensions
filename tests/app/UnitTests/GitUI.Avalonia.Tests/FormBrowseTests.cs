@@ -2192,6 +2192,9 @@ public sealed class FormBrowseTests
             navigate.RaiseEvent(new RoutedEventArgs(MenuItem.SubmenuOpenedEvent));
             toggleArtificial.IsEnabled.Should().BeTrue();
             toggleArtificial.RaiseEvent(new RoutedEventArgs(MenuItem.ClickEvent));
+
+            // The grid applies the selection asynchronously after the menu command.
+            await WaitUntilAsync(() => form.RevisionGrid.SelectedRevision?.IsArtificial == true);
             form.RevisionGrid.SelectedRevision!.IsArtificial.Should().BeTrue();
         }
         finally
