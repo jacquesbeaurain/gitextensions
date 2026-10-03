@@ -32,16 +32,16 @@ public sealed partial class SshSettingsPage : SettingsPageWithHeader
             EnableSshOptions();
         };
         Other.IsCheckedChanged += (_, _) => EnableSshOptions();
-        OtherSshBrowse.Click += (_, _) => ThreadHelper.FileAndForget(
+        OtherSshBrowse.Click += (_, _) => this.InvokeAndForget(
             () => BrowseExecutableAsync(OtherSsh, "Select SSH client", ["*.exe", "*"]));
-        PlinkBrowse.Click += (_, _) => ThreadHelper.FileAndForget(
+        PlinkBrowse.Click += (_, _) => this.InvokeAndForget(
             () => BrowseExecutableAsync(
                 PlinkPath,
                 "Select plink",
                 ["plink.exe", "tortoisegitplink.exe", "tortoiseplink.exe"]));
-        PuttygenBrowse.Click += (_, _) => ThreadHelper.FileAndForget(
+        PuttygenBrowse.Click += (_, _) => this.InvokeAndForget(
             () => BrowseExecutableAsync(PuttygenPath, "Select puttygen", ["puttygen.exe"]));
-        PageantBrowse.Click += (_, _) => ThreadHelper.FileAndForget(
+        PageantBrowse.Click += (_, _) => this.InvokeAndForget(
             () => BrowseExecutableAsync(PageantPath, "Select pageant", ["pageant.exe"]));
         InitializeComplete();
     }
