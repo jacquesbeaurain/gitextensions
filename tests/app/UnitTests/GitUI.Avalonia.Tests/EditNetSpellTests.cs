@@ -460,7 +460,11 @@ public sealed class EditNetSpellTests
             CaptureNode autoComplete = root.Children.Single(child => child.FieldName == "AutoComplete");
             if (OperatingSystem.IsWindows())
             {
-                autoComplete.BoundsDip.Should().Be(new CaptureRectangleF { X = 14, Y = 16, Width = 76, Height = 32 });
+                // The list is laid out from the installed font's metrics, which differ by a fraction of a DIP between Windows builds.
+                autoComplete.BoundsDip.Should().BeEquivalentTo(
+                    new CaptureRectangleF { X = 14, Y = 16, Width = 76, Height = 32 },
+                    options => options.Using<decimal>(context => context.Subject.Should().BeApproximately(context.Expectation, 0.1M))
+                        .WhenTypeIs<decimal>());
                 autoComplete.ClientSizeDip.Should().Be(new CaptureSizeF { Width = 74, Height = 30 });
             }
             else
