@@ -269,21 +269,21 @@
                   Padding="6,4"
                   BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
                   BorderThickness="0,0,1,1">
-            <TextBlock Text="Local branch name" FontWeight="SemiBold" />
+            <TextBlock Text="Local branch name" />
           </wf:DataGridViewTextBoxColumn>
           <wf:DataGridViewTextBoxColumn x:Name="RemoteCombo"
                   Grid.Column="1"
                   Padding="6,4"
                   BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
                   BorderThickness="0,0,1,1">
-            <TextBlock Text="Remote repository" FontWeight="SemiBold" />
+            <TextBlock Text="Remote repository" />
           </wf:DataGridViewTextBoxColumn>
           <wf:DataGridViewTextBoxColumn x:Name="MergeWith"
                   Grid.Column="2"
                   Padding="6,4"
                   BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
                   BorderThickness="0,0,1,1">
-            <TextBlock Text="Default merge with" FontWeight="SemiBold" />
+            <TextBlock Text="Default merge with" />
           </wf:DataGridViewTextBoxColumn>
           <wf:DataGridView x:Name="RemoteBranches"
                            Grid.Row="1" Grid.ColumnSpan="3"

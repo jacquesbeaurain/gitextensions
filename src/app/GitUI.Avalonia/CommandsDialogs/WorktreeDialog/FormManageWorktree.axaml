@@ -35,35 +35,35 @@
           <Grid ColumnDefinitions="2*,100,140,*">
             <Border x:Name="Path"
                     Padding="6,4"
-                    BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
-                    BorderThickness="0,0,1,1">
-              <TextBlock Text="Path" FontWeight="SemiBold" />
+                    BorderBrush="{DynamicResource GitExtensionsDataGridViewGridLineBrush}"
+                    BorderThickness="0,0,1,1" Background="{DynamicResource GitExtensionsWindowBackgroundBrush}">
+              <TextBlock Text="Path" />
             </Border>
             <Border x:Name="Type"
                     Grid.Column="1"
                     Padding="6,4"
-                    BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
-                    BorderThickness="0,0,1,1">
-              <TextBlock Text="Type" FontWeight="SemiBold" />
+                    BorderBrush="{DynamicResource GitExtensionsDataGridViewGridLineBrush}"
+                    BorderThickness="0,0,1,1" Background="{DynamicResource GitExtensionsWindowBackgroundBrush}">
+              <TextBlock Text="Type" />
             </Border>
             <Border x:Name="Branch"
                     Grid.Column="2"
                     Padding="6,4"
-                    BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
-                    BorderThickness="0,0,1,1">
-              <TextBlock Text="Branch" FontWeight="SemiBold" />
+                    BorderBrush="{DynamicResource GitExtensionsDataGridViewGridLineBrush}"
+                    BorderThickness="0,0,1,1" Background="{DynamicResource GitExtensionsWindowBackgroundBrush}">
+              <TextBlock Text="Branch" />
             </Border>
             <Border x:Name="Sha1"
                     Grid.Column="3"
                     Padding="6,4"
-                    BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
-                    BorderThickness="0,0,0,1">
-              <TextBlock Text="SHA-1" FontWeight="SemiBold" />
+                    BorderBrush="{DynamicResource GitExtensionsDataGridViewGridLineBrush}"
+                    BorderThickness="0,0,0,1" Background="{DynamicResource GitExtensionsWindowBackgroundBrush}">
+              <TextBlock Text="SHA-1" />
             </Border>
           </Grid>
 
           <ListBox x:Name="Worktrees"
-                   Classes="gitextensions-stretch-items"
+                   Classes="gitextensions-stretch-items gitextensions-data-grid"
                    Grid.Row="1" />
         </Grid>
 

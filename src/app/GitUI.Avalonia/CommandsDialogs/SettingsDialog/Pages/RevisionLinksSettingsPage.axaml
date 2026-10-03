@@ -160,16 +160,16 @@
               ColumnDefinitions="150,*">
           <Border x:Name="CaptionCol"
                   Padding="6,4"
-                  BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
-                  BorderThickness="0,0,1,1">
-            <TextBlock Text="Caption" FontWeight="SemiBold" />
+                  BorderBrush="{DynamicResource GitExtensionsDataGridViewGridLineBrush}"
+                  BorderThickness="0,0,1,1" Background="{DynamicResource GitExtensionsWindowBackgroundBrush}">
+            <TextBlock Text="Caption" />
           </Border>
           <Border x:Name="URICol"
                   Grid.Column="1"
                   Padding="6,4"
-                  BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
-                  BorderThickness="0,0,0,1">
-            <TextBlock Text="URI" FontWeight="SemiBold" />
+                  BorderBrush="{DynamicResource GitExtensionsDataGridViewGridLineBrush}"
+                  BorderThickness="0,0,0,1" Background="{DynamicResource GitExtensionsWindowBackgroundBrush}">
+            <TextBlock Text="URI" />
           </Border>
         </Grid>
         <ListBox x:Name="LinksGrid"

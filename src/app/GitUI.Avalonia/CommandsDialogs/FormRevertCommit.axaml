@@ -55,27 +55,27 @@
             <Grid RowDefinitions="Auto,*">
               <Grid ColumnDefinitions="43,*,120,80">
                 <Border Classes="gitextensions-list-header-cell"
-                        BorderThickness="0,0,1,1">
+                        BorderThickness="0,0,1,1" BorderBrush="{DynamicResource GitExtensionsDataGridViewGridLineBrush}" Background="{DynamicResource GitExtensionsWindowBackgroundBrush}">
                   <TextBlock x:Name="columnHeader1"
-                             FontWeight="SemiBold"
+                            
                              Text="No." />
                 </Border>
                 <Border Classes="gitextensions-list-header-cell" Grid.Column="1"
-                        BorderThickness="0,0,1,1">
+                        BorderThickness="0,0,1,1" BorderBrush="{DynamicResource GitExtensionsDataGridViewGridLineBrush}" Background="{DynamicResource GitExtensionsWindowBackgroundBrush}">
                   <TextBlock x:Name="columnHeader2"
-                             FontWeight="SemiBold"
+                            
                              Text="Message" />
                 </Border>
                 <Border Classes="gitextensions-list-header-cell" Grid.Column="2"
-                        BorderThickness="0,0,1,1">
+                        BorderThickness="0,0,1,1" BorderBrush="{DynamicResource GitExtensionsDataGridViewGridLineBrush}" Background="{DynamicResource GitExtensionsWindowBackgroundBrush}">
                   <TextBlock x:Name="columnHeader3"
-                             FontWeight="SemiBold"
+                            
                              Text="Author" />
                 </Border>
                 <Border Classes="gitextensions-list-header-cell" Grid.Column="3"
-                        BorderThickness="0,0,0,1">
+                        BorderThickness="0,0,0,1" BorderBrush="{DynamicResource GitExtensionsDataGridViewGridLineBrush}" Background="{DynamicResource GitExtensionsWindowBackgroundBrush}">
                   <TextBlock x:Name="columnHeader4"
-                             FontWeight="SemiBold"
+                            
                              Text="Date" />
                 </Border>
               </Grid>

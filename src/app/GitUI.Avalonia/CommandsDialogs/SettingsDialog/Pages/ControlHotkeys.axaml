@@ -12,15 +12,15 @@
       <TextBlock x:Name="lHotkeyableItems"
                  Text="Hotkeyable Items" />
       <Border Classes="gitextensions-list-header-cell" Grid.Column="2"
-              BorderThickness="1,1,1,0">
+              BorderThickness="1,1,1,0" BorderBrush="{DynamicResource GitExtensionsDataGridViewGridLineBrush}" Background="{DynamicResource GitExtensionsWindowBackgroundBrush}">
         <TextBlock x:Name="columnCommand"
-                   FontWeight="SemiBold"
+                  
                    Text="Command" />
       </Border>
       <Border Classes="gitextensions-list-header-cell" Grid.Column="3"
-              BorderThickness="0,1,1,0">
+              BorderThickness="0,1,1,0" BorderBrush="{DynamicResource GitExtensionsDataGridViewGridLineBrush}" Background="{DynamicResource GitExtensionsWindowBackgroundBrush}">
         <TextBlock x:Name="columnKey"
-                   FontWeight="SemiBold"
+                  
                    Text="Key" />
       </Border>
     </Grid>

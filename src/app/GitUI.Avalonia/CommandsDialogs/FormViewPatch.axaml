@@ -37,23 +37,23 @@
               ColumnDefinitions="*,70,50">
           <Border x:Name="FileNameA"
                   Padding="6,4"
-                  BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
-                  BorderThickness="0,0,1,1">
-            <TextBlock Text="Filename" FontWeight="SemiBold" />
+                  BorderBrush="{DynamicResource GitExtensionsDataGridViewGridLineBrush}"
+                  BorderThickness="0,0,1,1" Background="{DynamicResource GitExtensionsWindowBackgroundBrush}">
+            <TextBlock Text="Filename" />
           </Border>
           <Border x:Name="typeDataGridViewTextBoxColumn"
                   Grid.Column="1"
                   Padding="6,4"
-                  BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
-                  BorderThickness="0,0,1,1">
-            <TextBlock Text="Change" FontWeight="SemiBold" />
+                  BorderBrush="{DynamicResource GitExtensionsDataGridViewGridLineBrush}"
+                  BorderThickness="0,0,1,1" Background="{DynamicResource GitExtensionsWindowBackgroundBrush}">
+            <TextBlock Text="Change" />
           </Border>
           <Border x:Name="File"
                   Grid.Column="2"
                   Padding="6,4"
-                  BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
-                  BorderThickness="0,0,0,1">
-            <TextBlock Text="Type" FontWeight="SemiBold" />
+                  BorderBrush="{DynamicResource GitExtensionsDataGridViewGridLineBrush}"
+                  BorderThickness="0,0,0,1" Background="{DynamicResource GitExtensionsWindowBackgroundBrush}">
+            <TextBlock Text="Type" />
           </Border>
 
           <ListBox x:Name="GridChangedFiles"
