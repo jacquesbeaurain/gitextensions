@@ -364,6 +364,7 @@
           <SolidColorBrush x:Key="GitExtensionsNativeTreeInactiveSelectionAdjacentEdgeBrush" Color="#949494" />
           <SolidColorBrush x:Key="GitExtensionsNativeTreeInactiveSelectionInnerCornerBrush" Color="#D9D9D9" />
           <SolidColorBrush x:Key="GitExtensionsXhtmlLinkForegroundBrush" Color="#0066CC" />
+          <SolidColorBrush x:Key="GitExtensionsLinkLabelForegroundBrush" Color="#0000FF" />
           <SolidColorBrush x:Key="GitExtensionsWindowBackgroundBrush" Color="#FFFFFF" />
           <SolidColorBrush x:Key="GitExtensionsCommitEditorBackgroundBrush" Color="#FFFFFF" />
           <SolidColorBrush x:Key="GitExtensionsCommitEditorReadOnlyBackgroundBrush" Color="#F0F0F0" />
@@ -566,6 +567,7 @@
           <SolidColorBrush x:Key="GitExtensionsNativeTreeInactiveSelectionAdjacentEdgeBrush" Color="#3C3C3C" />
           <SolidColorBrush x:Key="GitExtensionsNativeTreeInactiveSelectionInnerCornerBrush" Color="#353535" />
           <SolidColorBrush x:Key="GitExtensionsXhtmlLinkForegroundBrush" Color="#FFFFFF" />
+          <SolidColorBrush x:Key="GitExtensionsLinkLabelForegroundBrush" Color="#4DA3FF" />
           <SolidColorBrush x:Key="GitExtensionsWindowBackgroundBrush" Color="#323232" />
           <SolidColorBrush x:Key="GitExtensionsCommitEditorBackgroundBrush" Color="#2E2E2E" />
           <SolidColorBrush x:Key="GitExtensionsCommitEditorReadOnlyBackgroundBrush" Color="#2E2E2E" />
@@ -991,6 +993,14 @@
     <Setter Property="Background" Value="{DynamicResource GitExtensionsHighlightBackgroundBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource GitExtensionsHighlightBackgroundBrush}" />
   </Style>
+  <!-- Windows 11 CheckBox: unchecked glyph is a white box with a dark outline. -->
+  <Style Selector="CheckBox /template/ Border#PART_Indicator">
+    <Setter Property="CornerRadius" Value="2" />
+  </Style>
+  <Style Selector="CheckBox:unchecked:not(:disabled) /template/ Border#PART_Indicator">
+    <Setter Property="Background" Value="{DynamicResource GitExtensionsTextInputBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="#616161" />
+  </Style>
   <Style Selector="CheckBox:checked /template/ Path#PART_CheckGlyph">
     <Setter Property="IsVisible" Value="True" />
   </Style>
@@ -1294,6 +1304,13 @@
     <Setter Property="Margin" Value="-2,0,-2,0" />
     <Setter Property="Padding" Value="9,5" />
     <Setter Property="Background" Value="{DynamicResource GitExtensionsBrowseTabSelectedBackgroundBrush}" />
+  </Style>
+  <!-- WinForms LinkLabel: system link color with an underline. -->
+  <Style Selector="HyperlinkButton">
+    <Setter Property="Foreground" Value="{DynamicResource GitExtensionsLinkLabelForegroundBrush}" />
+  </Style>
+  <Style Selector="HyperlinkButton TextBlock">
+    <Setter Property="TextDecorations" Value="Underline" />
   </Style>
   <!-- RichEdit's automatic link foreground follows the native theme, not Fluent's blue link palette. -->
   <Style Selector="compat|XhtmlTextBlock HyperlinkButton">
