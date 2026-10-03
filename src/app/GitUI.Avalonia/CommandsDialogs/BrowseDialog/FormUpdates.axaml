@@ -9,7 +9,9 @@
         MinHeight="157"
         CanResize="False"
         WindowStartupLocation="CenterOwner"
-        Title="Check for update">
+        Title="Check for update"
+        CanMinimize="False"
+        CanMaximize="False">
   <Grid RowDefinitions="*,Auto">
     <Grid x:Name="MainPanel"
           Margin="12">

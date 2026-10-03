@@ -8,7 +8,9 @@
         MinWidth="460" MinHeight="125"
         CanResize="False"
         WindowStartupLocation="CenterOwner"
-        Title="Checkout revision">
+        Title="Checkout revision"
+        CanMinimize="False"
+        CanMaximize="False">
   <Grid RowDefinitions="90,41">
     <Border x:Name="MainPanel"
             Padding="12"

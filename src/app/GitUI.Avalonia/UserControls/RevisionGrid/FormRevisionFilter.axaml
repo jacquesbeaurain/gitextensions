@@ -8,7 +8,9 @@
         MinHeight="580"
         WindowStartupLocation="CenterOwner"
         CanResize="False"
-        Title="Filter">
+        Title="Filter"
+        CanMinimize="False"
+        CanMaximize="False">
   <DockPanel>
     <StackPanel x:Name="ControlsPanel"
                 Classes="gitextensions-dialog-controls"

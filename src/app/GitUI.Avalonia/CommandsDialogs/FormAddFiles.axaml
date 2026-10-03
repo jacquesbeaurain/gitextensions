@@ -8,7 +8,9 @@
         MaxHeight="65"
         CanResize="True"
         WindowStartupLocation="CenterOwner"
-        Title="Add files">
+        Title="Add files"
+        CanMinimize="False"
+        CanMaximize="False">
   <!-- The WinForms source was authored at 120 DPI. These integral bounds are its
        native 96-DPI layout, not dimensions inferred from a scaled screenshot. -->
   <Canvas>

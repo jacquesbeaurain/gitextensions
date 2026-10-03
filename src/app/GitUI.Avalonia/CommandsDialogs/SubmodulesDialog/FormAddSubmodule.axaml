@@ -5,7 +5,9 @@
         MinWidth="420"
         CanResize="False"
         WindowStartupLocation="CenterOwner"
-        Title="Add submodule">
+        Title="Add submodule"
+        CanMinimize="False"
+        CanMaximize="False">
   <Grid Classes="gitextensions-dialog-main"
         ColumnDefinitions="122,*,102"
         RowDefinitions="Auto,Auto,Auto,Auto"

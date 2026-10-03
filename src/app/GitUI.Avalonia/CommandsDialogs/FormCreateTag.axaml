@@ -8,7 +8,9 @@
         MinWidth="455" MinHeight="260"
         CanResize="False"
         WindowStartupLocation="CenterOwner"
-        Title="Create tag">
+        Title="Create tag"
+        CanMinimize="False"
+        CanMaximize="False">
   <Grid x:Name="tableLayoutPanel2"
         Classes="gitextensions-dialog-main"
         ColumnDefinitions="Auto,*"

@@ -8,7 +8,9 @@
         MinHeight="469"
         WindowStartupLocation="CenterOwner"
         CanResize="False"
-        Title="Reset current branch">
+        Title="Reset current branch"
+        CanMinimize="False"
+        CanMaximize="False">
   <Grid x:Name="tableLayoutPanel1"
         Margin="8"
         RowDefinitions="Auto,150,245,*">

@@ -9,7 +9,9 @@
         CanResize="False"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
-        Title="Compare to branch">
+        Title="Compare to branch"
+        CanMinimize="False"
+        CanMaximize="False">
   <Canvas Width="434"
           Height="106">
     <Button x:Name="btnCompare"

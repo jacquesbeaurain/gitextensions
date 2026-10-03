@@ -7,7 +7,9 @@
         Height="254"
         CanResize="False"
         WindowStartupLocation="CenterOwner"
-        Title="Submodule conflict">
+        Title="Submodule conflict"
+        CanMinimize="False"
+        CanMaximize="False">
   <Grid Margin="12"
         RowDefinitions="Auto,Auto,Auto,Auto,Auto,*,Auto"
         RowSpacing="6">

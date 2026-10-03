@@ -5,7 +5,8 @@
         Width="698" Height="361"
         MinWidth="550" MinHeight="310"
         WindowStartupLocation="CenterOwner"
-        Title="Commit message settings">
+        Title="Commit message settings"
+        CanMinimize="False">
   <Grid RowDefinitions="*,41">
     <Border Classes="commit-template-main-panel"
             Padding="9"

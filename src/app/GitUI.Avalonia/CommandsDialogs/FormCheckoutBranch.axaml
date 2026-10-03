@@ -6,7 +6,9 @@
         WindowStartupLocation="CenterOwner"
         CanResize="False"
         Background="{DynamicResource GitExtensionsKnownColorControlBrush}"
-        Title="Checkout branch">
+        Title="Checkout branch"
+        CanMinimize="False"
+        CanMaximize="False">
   <DockPanel>
     <Grid x:Name="ControlsPanel"
           Classes="gitextensions-dialog-controls"

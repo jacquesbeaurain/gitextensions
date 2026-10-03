@@ -10,7 +10,9 @@
         SizeToContent="Height"
         WindowStartupLocation="CenterOwner"
         CanResize="False"
-        Title="Merge branches">
+        Title="Merge branches"
+        CanMinimize="False"
+        CanMaximize="False">
   <wf:TableLayoutPanel x:Name="tableLayoutPanel1"
                        MinHeight="424"
                        ColumnDefinitions="295,*"

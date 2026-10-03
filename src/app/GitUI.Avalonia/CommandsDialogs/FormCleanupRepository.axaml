@@ -8,7 +8,9 @@
         MinWidth="430"
         MinHeight="551"
         WindowStartupLocation="CenterOwner"
-        Title="Clean working directory">
+        Title="Clean working directory"
+        CanMinimize="False"
+        CanMaximize="False">
   <!-- Framework constraint: the Designer is authored at 120 DPI; these integer DIPs are the
        bounds produced by WinForms' own AutoScale at the native 96-DPI baseline. -->
   <Grid>

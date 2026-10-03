@@ -11,7 +11,9 @@
         MinWidth="674"
         MinHeight="525"
         CanResize="True"
-        Title="Pull">
+        Title="Pull"
+        CanMinimize="False"
+        CanMaximize="False">
   <Window.Styles>
     <Style Selector="wf|GroupBox.remote-source-group">
       <Setter Property="Padding" Value="0" />

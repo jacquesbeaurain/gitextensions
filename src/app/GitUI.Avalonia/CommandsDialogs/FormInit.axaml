@@ -6,7 +6,9 @@
         Width="542" SizeToContent="Height"
         CanResize="False"
         WindowStartupLocation="CenterOwner"
-        Title="Create new repository">
+        Title="Create new repository"
+        CanMinimize="False"
+        CanMaximize="False">
   <Grid RowDefinitions="149,41">
     <wf:Panel x:Name="MainPanel"
               Padding="12"

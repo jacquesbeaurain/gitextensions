@@ -8,6 +8,7 @@
         CanResize="False"
         CanMinimize="False"
         CanMaximize="False"
+        ShowInTaskbar="False"
         WindowStartupLocation="Manual">
   <Grid RowDefinitions="103,41" Margin="0">
     <Grid x:Name="MainPanel"

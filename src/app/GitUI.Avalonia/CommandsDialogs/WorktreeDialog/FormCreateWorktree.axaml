@@ -6,7 +6,9 @@
         MinWidth="500"
         WindowStartupLocation="CenterOwner"
         CanResize="False"
-        Title="Create a new worktree">
+        Title="Create a new worktree"
+        CanMinimize="False"
+        CanMaximize="False">
   <DockPanel>
     <StackPanel x:Name="ControlsPanel"
                 Classes="gitextensions-dialog-controls"

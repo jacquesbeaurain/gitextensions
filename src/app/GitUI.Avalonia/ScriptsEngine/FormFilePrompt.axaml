@@ -6,7 +6,9 @@
         Width="549" Height="78" MinWidth="450" MaxWidth="800"
         CanResize="True"
         WindowStartupLocation="CenterOwner"
-        Title="Select script files">
+        Title="Select script files"
+        CanMinimize="False"
+        CanMaximize="False">
   <Grid Classes="gitextensions-dialog-main"
         Margin="8"
         RowDefinitions="Auto,Auto"

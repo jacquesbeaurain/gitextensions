@@ -6,7 +6,9 @@
         MinWidth="403" MinHeight="102"
         WindowStartupLocation="CenterOwner"
         SizeToContent="Height"
-        Title="Delete branch">
+        Title="Delete branch"
+        CanMinimize="False"
+        CanMaximize="False">
   <DockPanel>
     <Grid x:Name="ControlsPanel"
           DockPanel.Dock="Bottom"

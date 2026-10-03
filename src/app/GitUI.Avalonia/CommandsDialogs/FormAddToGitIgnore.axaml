@@ -6,7 +6,8 @@
         Height="341"
         WindowStartupLocation="CenterOwner"
         CanResize="True"
-        Title="Add file(s) to .gitignore">
+        Title="Add file(s) to .gitignore"
+        CanMinimize="False">
   <Grid RowDefinitions="93,*,44">
     <HeaderedContentControl x:Name="groupFilePattern"
                             Grid.Row="0"

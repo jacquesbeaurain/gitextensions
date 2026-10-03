@@ -9,7 +9,9 @@
         TransparencyLevelHint="Transparent"
         Background="{StaticResource GitExtensionsTransparentBrush}"
         Title=""
-        WindowStartupLocation="CenterOwner">
+        WindowStartupLocation="CenterOwner"
+        CanMinimize="False"
+        CanMaximize="False">
   <Grid x:Name="tableLayoutPanel1"
         RowDefinitions="Auto,*"
         HorizontalAlignment="Left"

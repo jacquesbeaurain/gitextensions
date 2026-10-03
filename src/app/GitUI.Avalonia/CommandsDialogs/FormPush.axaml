@@ -10,7 +10,8 @@
         MinWidth="584"
         MinHeight="290"
         CanResize="True"
-        Title="Push">
+        Title="Push"
+        CanMinimize="False">
   <Window.Styles>
     <Style Selector="wf|GroupBox.remote-source-group">
       <Setter Property="Padding" Value="0" />

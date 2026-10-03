@@ -3,7 +3,8 @@
         x:Class="GitUI.CommandsDialogs.FormResetChanges"
         Width="460" Height="121"
         WindowStartupLocation="CenterOwner"
-        Title="Reset changes">
+        Title="Reset changes"
+        CanMinimize="False">
   <!-- The docked children are ordered bottom-up: Windows Forms docks in reverse z-order,
        so the button row sits at the very bottom and the message fills what is left. -->
   <DockPanel Margin="8,8,0,0">

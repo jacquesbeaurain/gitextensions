@@ -4,7 +4,8 @@
         Width="394" Height="662"
         MinWidth="394" MinHeight="662"
         WindowStartupLocation="CenterOwner"
-        Title="Commandline usage">
+        Title="Commandline usage"
+        CanMaximize="False">
   <StackPanel x:Name="flowLayoutPanel1" Orientation="Vertical">
     <TextBlock x:Name="label1"
                Width="373" Height="50"

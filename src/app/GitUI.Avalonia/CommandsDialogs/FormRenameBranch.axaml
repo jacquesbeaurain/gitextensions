@@ -5,7 +5,9 @@
         MinWidth="392" MinHeight="42"
         MaxHeight="42"
         WindowStartupLocation="CenterOwner"
-        Title="Rename branch">
+        Title="Rename branch"
+        CanMinimize="False"
+        CanMaximize="False">
   <Canvas x:Name="tableLayoutPanel1">
     <TextBlock x:Name="label1"
                Classes="gitextensions-dialog-label"

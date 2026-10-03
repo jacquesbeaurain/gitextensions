@@ -7,7 +7,9 @@
         Width="647" SizeToContent="Height"
         MinWidth="434" MaxWidth="934" CanResize="False"
         WindowStartupLocation="CenterOwner"
-        Title="Clone">
+        Title="Clone"
+        CanMinimize="False"
+        CanMaximize="False">
   <Grid RowDefinitions="331,41">
     <wf:Panel x:Name="MainPanel"
               Padding="12"

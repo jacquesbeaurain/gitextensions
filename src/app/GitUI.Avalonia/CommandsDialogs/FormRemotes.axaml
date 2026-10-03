@@ -9,7 +9,9 @@
         Width="934" Height="306"
         MinWidth="934" MinHeight="270"
         WindowStartupLocation="CenterOwner"
-        Title="Remote repositories">
+        Title="Remote repositories"
+        CanMinimize="False"
+        CanMaximize="False">
   <TabControl x:Name="tabControl1"
               Classes="gitextensions-native-tabs"
               Padding="0">

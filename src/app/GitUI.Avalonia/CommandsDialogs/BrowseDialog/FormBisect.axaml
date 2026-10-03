@@ -5,7 +5,9 @@
         Height="169"
         CanResize="False"
         WindowStartupLocation="CenterOwner"
-        Title="Bisect">
+        Title="Bisect"
+        CanMinimize="False"
+        CanMaximize="False">
   <!-- Framework constraint: WinForms AutoSize contracts the 171-pixel Designer client to
        this integer 169-pixel native-96-DPI runtime size. -->
   <Grid>

@@ -7,7 +7,9 @@
         MaxWidth="942" MaxHeight="91"
         WindowStartupLocation="CenterOwner"
         Background="{DynamicResource GitExtensionsKnownColorControlBrush}"
-        Title="Delete branch">
+        Title="Delete branch"
+        CanMinimize="False"
+        CanMaximize="False">
   <DockPanel>
     <Grid x:Name="ControlsPanel"
           Classes="gitextensions-dialog-controls"

@@ -6,7 +6,9 @@
         MinWidth="470" MinHeight="210"
         MaxWidth="1000" MaxHeight="210"
         WindowStartupLocation="CenterOwner"
-        Title="Delete tag">
+        Title="Delete tag"
+        CanMinimize="False"
+        CanMaximize="False">
   <Grid Classes="gitextensions-dialog-main"
         ColumnDefinitions="Auto,*,Auto"
         RowDefinitions="30,32,30,30,*,24"

@@ -10,7 +10,9 @@
         MinHeight="316"
         CanResize="True"
         WindowStartupLocation="CenterOwner"
-        Title="Format patch">
+        Title="Format patch"
+        CanMinimize="False"
+        CanMaximize="False">
   <!-- The 120-DPI WinForms Designer values resolve through AutoScale to these integer 96-DPI dimensions. -->
   <Grid x:Name="tableLayoutPanelForm"
         ColumnDefinitions="*,Auto"

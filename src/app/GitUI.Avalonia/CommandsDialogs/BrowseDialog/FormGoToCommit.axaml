@@ -4,7 +4,9 @@
         Width="604" Height="302"
         MinWidth="604" MinHeight="302"
         WindowStartupLocation="CenterOwner"
-        Title="Go to commit">
+        Title="Go to commit"
+        CanMinimize="False"
+        CanMaximize="False">
   <Window.Styles>
     <Style Selector="GroupBox.go-to-commit-help /template/ ContentPresenter#PART_HeaderPresenter">
       <Setter Property="MinHeight" Value="22" />

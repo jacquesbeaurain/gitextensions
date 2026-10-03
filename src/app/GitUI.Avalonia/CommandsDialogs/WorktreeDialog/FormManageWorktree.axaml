@@ -6,7 +6,9 @@
         Width="710" Height="361"
         MinWidth="710" MinHeight="200"
         WindowStartupLocation="CenterOwner"
-        Title="Existing worktrees">
+        Title="Existing worktrees"
+        CanMinimize="False"
+        CanMaximize="False">
   <DockPanel>
     <Grid x:Name="ControlsPanel"
           Classes="gitextensions-dialog-controls"

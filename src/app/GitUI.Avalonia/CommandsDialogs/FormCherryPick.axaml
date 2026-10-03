@@ -10,7 +10,9 @@
         MinHeight="331"
         WindowStartupLocation="CenterOwner"
         CanResize="False"
-        Title="Cherry pick commit">
+        Title="Cherry pick commit"
+        CanMinimize="False"
+        CanMaximize="False">
   <Grid RowDefinitions="Auto,41">
     <wf:FlowLayoutPanel x:Name="ControlsPanel" Grid.Row="1" TabIndex="1">
       <Grid Width="614"

@@ -6,7 +6,8 @@
         Width="859"
         Height="575"
         WindowStartupLocation="CenterOwner"
-        Title="Verify database">
+        Title="Verify database"
+        CanMinimize="False">
   <Grid RowDefinitions="134,*,61">
     <Canvas x:Name="panel2"
             Height="138"

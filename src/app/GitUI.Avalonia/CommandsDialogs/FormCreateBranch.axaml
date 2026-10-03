@@ -9,7 +9,9 @@
         CanResize="False"
         WindowStartupLocation="CenterOwner"
         Background="{DynamicResource GitExtensionsKnownColorControlBrush}"
-        Title="Create branch">
+        Title="Create branch"
+        CanMinimize="False"
+        CanMaximize="False">
   <DockPanel>
     <Grid x:Name="ControlsPanel"
           Classes="gitextensions-dialog-controls"
