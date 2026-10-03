@@ -154,7 +154,7 @@ public sealed class AxamlVisualVocabularyTests
             }
         }
 
-        findings.Should().BeEmpty();
+        findings.Should().BeEmpty("all findings:{0}{1}", Environment.NewLine, string.Join(Environment.NewLine, findings));
     }
 
     [Test]
@@ -208,7 +208,7 @@ public sealed class AxamlVisualVocabularyTests
             }
         }
 
-        findings.Should().BeEmpty();
+        findings.Should().BeEmpty("all findings:{0}{1}", Environment.NewLine, string.Join(Environment.NewLine, findings));
     }
 
     [Test]

@@ -55,7 +55,7 @@
                 VerticalAlignment="Center"
                 IsVisible="False"
                 Background="{DynamicResource GitExtensionsKnownColorControlBrush}">
-          <Canvas Width="233" Height="26">
+          <Canvas>
             <Image x:Name="pictureBox1"
                    Canvas.Left="10"
                    Canvas.Top="5"
