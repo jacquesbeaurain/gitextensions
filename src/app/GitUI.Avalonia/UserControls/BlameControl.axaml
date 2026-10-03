@@ -12,7 +12,7 @@
 
     <Grid x:Name="splitContainer2"
           Grid.Row="2"
-          ColumnDefinitions="186,6,*">
+          ColumnDefinitions="186*,6,666*">
       <editor:FileViewer x:Name="BlameAuthor"
                          Grid.Column="0"
                          IsTabStop="False">

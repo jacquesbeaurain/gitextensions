@@ -17,7 +17,7 @@
 
     <Grid x:Name="splitContainer2"
           Grid.Row="2"
-          ColumnDefinitions="260,0,*">
+          ColumnDefinitions="260*,0,475*">
       <Border Classes="gitextensions-section">
         <gitui:FileStatusList x:Name="DiffFiles" />
       </Border>

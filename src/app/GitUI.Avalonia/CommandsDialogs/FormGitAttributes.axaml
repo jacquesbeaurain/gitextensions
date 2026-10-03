@@ -7,7 +7,7 @@
         WindowStartupLocation="CenterOwner"
         Title="Edit .gitattributes">
   <Grid x:Name="splitContainer1"
-        ColumnDefinitions="381,4,*"
+        ColumnDefinitions="381*,4,249*"
         TabIndex="0">
     <editor:FileViewer x:Name="_NO_TRANSLATE_GitAttributesText"
                        Grid.Column="0"

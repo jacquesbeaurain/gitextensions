@@ -65,7 +65,7 @@
     <Grid x:Name="splitContainer1"
           Grid.Row="1"
           Margin="0,0,0,6"
-          ColumnDefinitions="700,6,*">
+          ColumnDefinitions="700*,6,153*">
       <Grid RowDefinitions="25,*">
           <Grid Classes="gitextensions-data-grid-header"
                 ColumnDefinitions="28,80,100,*,150,92,92">

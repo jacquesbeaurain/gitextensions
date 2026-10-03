@@ -16,7 +16,7 @@
         WindowStartupLocation="CenterOwner"
         Title="File History">
   <Grid x:Name="MainPanel"
-        RowDefinitions="25,107,6,*">
+        RowDefinitions="25,107*,6,306*">
     <Grid.ContextMenu>
       <ContextMenu x:Name="FileHistoryContextMenu">
         <revisionGrid:CopyContextMenuItem x:Name="copyToClipboardToolStripMenuItem" Header="Copy to clipboard" />

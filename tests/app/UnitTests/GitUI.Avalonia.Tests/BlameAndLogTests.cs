@@ -118,7 +118,8 @@ public sealed class BlameAndLogTests
 
         FormLog.TestAccessor accessor = form.GetTestAccessor();
         Grid root = (Grid)form.Content!;
-        root.RowDefinitions[0].Height.Should().Be(new GridLength(205));
+        // FixedPanel.None: both panes keep their designer proportion when the form is resized.
+        root.RowDefinitions[0].Height.Should().Be(new GridLength(205, GridUnitType.Star));
         root.RowDefinitions[1].Height.Should().Be(new GridLength(6));
         root.ColumnDefinitions.Should().BeEmpty();
         Grid lower = (Grid)accessor.DiffFiles.Parent!;

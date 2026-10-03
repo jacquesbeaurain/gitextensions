@@ -12,7 +12,7 @@
         WindowStartupLocation="CenterOwner"
         Title="Diff">
   <Grid x:Name="splitContainer1"
-        RowDefinitions="205,6,*"
+        RowDefinitions="205*,6,318*"
         Background="{StaticResource GitExtensionsTransparentBrush}"
         TabIndex="0">
     <gitui:RevisionGridControl x:Name="RevisionGrid"

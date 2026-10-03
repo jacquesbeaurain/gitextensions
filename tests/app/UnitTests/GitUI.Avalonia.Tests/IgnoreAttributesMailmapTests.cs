@@ -258,9 +258,9 @@ public sealed class IgnoreAttributesMailmapTests
     {
         Grid split = form.FindControl<Grid>("splitContainer1")!;
         split.ColumnDefinitions.Select(column => column.Width).Should().Equal(
-            new GridLength(381),
+            new GridLength(381, GridUnitType.Star),
             new GridLength(4),
-            GridLength.Star);
+            new GridLength(249, GridUnitType.Star));
         editor.TabIndex.Should().Be(0);
         save.Bounds.Size.Should().Be(new Size(75, 25));
         save.TabIndex.Should().Be(0);

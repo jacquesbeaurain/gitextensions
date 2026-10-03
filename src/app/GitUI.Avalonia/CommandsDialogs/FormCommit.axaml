@@ -33,7 +33,7 @@
       <Grid x:Name="splitLeft"
             Grid.Column="0"
             Margin="6,6,0,6"
-            RowDefinitions="268,6,*">
+            RowDefinitions="268*,6,342*">
         <Grid x:Name="toolStripContainer1"
               Grid.Row="0"
               Margin="1"

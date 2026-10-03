@@ -231,6 +231,43 @@ public sealed class FormCommitTests
     }
 
     [AvaloniaTest]
+    public async Task FormCommit_should_resize_its_splits_like_the_WinForms_split_containers()
+    {
+        FormCommit form = new(new GitUICommands(_serviceContainer, CreateRepositoryWithStagedAndUnstagedChanges()));
+        try
+        {
+            form.Show();
+            FileStatusList unstaged = form.FindControl<FileStatusList>("Unstaged")!;
+            FileStatusList staged = form.FindControl<FileStatusList>("Staged")!;
+            await WaitForCountsAsync(unstaged, 1, staged, 1);
+            Grid splitLeft = form.FindControl<Grid>("splitLeft")!;
+            Grid splitRight = form.FindControl<Grid>("splitRight")!;
+            double leftTop = splitLeft.RowDefinitions[0].ActualHeight;
+            double leftBottom = splitLeft.RowDefinitions[2].ActualHeight;
+            double rightBottom = splitRight.RowDefinitions[2].ActualHeight;
+
+            form.Height += 300;
+            Dispatcher.UIThread.RunJobs();
+            form.UpdateLayout();
+
+            // FixedPanel.None (splitLeft) grows both panes and keeps their proportion.
+            double newTop = splitLeft.RowDefinitions[0].ActualHeight;
+            double newBottom = splitLeft.RowDefinitions[2].ActualHeight;
+            newTop.Should().BeGreaterThan(leftTop);
+            newBottom.Should().BeGreaterThan(leftBottom);
+            (newTop / (newTop + newBottom)).Should().BeApproximately(leftTop / (leftTop + leftBottom), 0.01);
+
+            // FixedPanel.Panel2 (splitRight) keeps the commit message pane at its size.
+            splitRight.RowDefinitions[2].ActualHeight.Should().Be(rightBottom);
+        }
+        finally
+        {
+            form.Close();
+            await form.GetTestAccessor().ClosePersistenceTask;
+        }
+    }
+
+    [AvaloniaTest]
     public async Task FormCommit_should_match_the_96_dpi_designer_shell_and_control_order()
     {
         FormCommit form = new(new GitUICommands(_serviceContainer, CreateRepositoryWithStagedAndUnstagedChanges()));
@@ -256,12 +293,15 @@ public sealed class FormCommitTests
                 new GridLength(397),
                 new GridLength(6),
                 new GridLength(1, GridUnitType.Star));
-            splitLeft.RowDefinitions.Select(row => row.Height).Should().Equal(
-                new GridLength(268),
-                new GridLength(6),
-                new GridLength(1, GridUnitType.Star));
+            // FixedPanel.None: both panes stay proportional when the form is resized.
+            splitLeft.RowDefinitions.Select(row => row.Height.GridUnitType).Should().Equal(
+                GridUnitType.Star,
+                GridUnitType.Pixel,
+                GridUnitType.Star);
+            splitLeft.RowDefinitions[1].Height.Should().Be(new GridLength(6));
+            // FixedPanel.Panel2: the commit message pane keeps its size, the file viewer absorbs resizes.
             splitRight.RowDefinitions.Select(row => row.Height).Should().Equal(
-                new GridLength(412),
+                new GridLength(1, GridUnitType.Star),
                 new GridLength(6),
                 new GridLength(192));
             tableLayoutPanel1.RowDefinitions.Select(row => row.Height).Should().Equal(

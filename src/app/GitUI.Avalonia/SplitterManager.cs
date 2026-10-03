@@ -107,6 +107,8 @@ public sealed class SplitterManager
     private sealed class GridSplitterTarget : IPersistedSplitter
     {
         private readonly DefinitionBase _leadingDefinition;
+        private readonly DefinitionBase? _trailingDefinition;
+        private readonly DefinitionBase _gapDefinition;
         private readonly GridResizeDirection _resizeDirection;
         private readonly Grid _splitter;
 
@@ -133,6 +135,39 @@ public sealed class SplitterManager
             _leadingDefinition = _resizeDirection == GridResizeDirection.Columns
                 ? splitter.ColumnDefinitions[splitterIndex - 1]
                 : splitter.RowDefinitions[splitterIndex - 1];
+            _gapDefinition = _resizeDirection == GridResizeDirection.Columns
+                ? splitter.ColumnDefinitions[splitterIndex]
+                : splitter.RowDefinitions[splitterIndex];
+            int trailingIndex = splitterIndex + 1;
+            int definitionCount = _resizeDirection == GridResizeDirection.Columns
+                ? splitter.ColumnDefinitions.Count
+                : splitter.RowDefinitions.Count;
+            _trailingDefinition = trailingIndex < definitionCount
+                ? (_resizeDirection == GridResizeDirection.Columns
+                    ? splitter.ColumnDefinitions[trailingIndex]
+                    : splitter.RowDefinitions[trailingIndex])
+                : null;
+        }
+
+        private double Available
+            => (_resizeDirection == GridResizeDirection.Columns ? _splitter.Bounds.Width : _splitter.Bounds.Height)
+                - (_gapDefinition is ColumnDefinition gapColumn ? gapColumn.ActualWidth : ((RowDefinition)_gapDefinition).ActualHeight);
+
+        private GridLength GetLength(DefinitionBase? definition)
+            => definition is ColumnDefinition column ? column.Width
+                : definition is RowDefinition row ? row.Height
+                : GridLength.Auto;
+
+        private static void SetLength(DefinitionBase definition, GridLength length)
+        {
+            if (definition is ColumnDefinition column)
+            {
+                column.Width = length;
+            }
+            else if (definition is RowDefinition row)
+            {
+                row.Height = length;
+            }
         }
 
         public double SplitterSize => _resizeDirection == GridResizeDirection.Columns
@@ -151,13 +186,29 @@ public sealed class SplitterManager
                     return;
                 }
 
-                if (_resizeDirection == GridResizeDirection.Columns)
+                GridLength leading = GetLength(_leadingDefinition);
+                GridLength trailing = GetLength(_trailingDefinition);
+                if (_trailingDefinition is not null && leading.IsStar && trailing.IsStar)
                 {
-                    ((ColumnDefinition)_leadingDefinition).Width = new GridLength(value);
+                    // WinForms SplitContainer without a fixed panel keeps the splitter proportional on
+                    // resize, so retain proportional weights rather than freezing the leading pane.
+                    double available = Available;
+                    double total = available > value ? available : leading.Value + trailing.Value;
+                    SetLength(_leadingDefinition, new GridLength(value, GridUnitType.Star));
+                    SetLength(_trailingDefinition, new GridLength(Math.Max(total - value, 1), GridUnitType.Star));
+                }
+                else if (_trailingDefinition is not null && leading.IsStar && trailing.IsAbsolute)
+                {
+                    // FixedPanel.Panel2: the trailing pane keeps its size and the leading pane absorbs resizes.
+                    double available = Available;
+                    if (available > value)
+                    {
+                        SetLength(_trailingDefinition, new GridLength(available - value));
+                    }
                 }
                 else
                 {
-                    ((RowDefinition)_leadingDefinition).Height = new GridLength(value);
+                    SetLength(_leadingDefinition, new GridLength(value));
                 }
             }
         }

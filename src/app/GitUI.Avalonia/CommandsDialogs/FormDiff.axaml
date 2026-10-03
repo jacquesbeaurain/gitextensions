@@ -19,7 +19,7 @@
           Margin="3"
           Background="{StaticResource GitExtensionsTransparentBrush}"
           VerticalAlignment="Top"
-          ColumnDefinitions="345,6,*"
+          ColumnDefinitions="345*,6,685*"
           TabIndex="1">
       <gitui:FileStatusList x:Name="DiffFiles"
                             Background="{StaticResource GitExtensionsTransparentBrush}"
