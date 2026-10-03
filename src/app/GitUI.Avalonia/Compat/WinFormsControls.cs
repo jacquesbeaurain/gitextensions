@@ -38,6 +38,11 @@ public class LinkLabel : Button
 /// </summary>
 public class GroupBox : HeaderedContentControl
 {
+    public GroupBox()
+    {
+        Classes.Add("gitextensions-group-frame");
+    }
+
     protected override Type StyleKeyOverride => typeof(HeaderedContentControl);
 }
 

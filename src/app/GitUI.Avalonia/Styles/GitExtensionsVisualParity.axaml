@@ -3,7 +3,8 @@
         xmlns:avaloniaEdit="https://github.com/avaloniaui/avaloniaedit"
         xmlns:compat="using:GitUI.Compat"
         xmlns:converters="using:Avalonia.Controls.Converters"
-        xmlns:leftpanel="using:GitUI.LeftPanel">
+        xmlns:leftpanel="using:GitUI.LeftPanel"
+        xmlns:wf="using:GitUI.Compat.WinFormsControls">
   <Styles.Resources>
     <ResourceDictionary>
       <!-- WinForms stores fonts in points; these defaults are the equivalent Avalonia
@@ -711,6 +712,46 @@
           <SolidColorBrush x:Key="GitExtensionsBlameAge6Brush" Color="#78E391" />
         </ResourceDictionary>
       </ResourceDictionary.ThemeDictionaries>
+      <!-- Native GroupBox frame shared by GroupBox and gitextensions-group-box. -->
+      <ControlTemplate x:Key="GitExtensionsGroupBoxTemplate" TargetType="HeaderedContentControl">
+        <Grid RowDefinitions="Auto,*" ColumnDefinitions="8,Auto,*">
+          <!-- The frame's side edges begin at the caption's vertical middle, like the native GroupBox. -->
+          <Grid Grid.ColumnSpan="3" RowDefinitions="*,*">
+            <Border Grid.Row="1"
+                    BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
+                    BorderThickness="1,0,1,0" />
+          </Grid>
+          <Border x:Name="PART_GroupBoxHeaderLeft"
+                  Grid.Column="0"
+                  Height="1"
+                  VerticalAlignment="Center"
+                  Background="{DynamicResource GitExtensionsSectionBorderBrush}" />
+          <ContentPresenter x:Name="PART_HeaderPresenter"
+                            Grid.Column="1"
+                            Margin="3,0"
+                            Content="{TemplateBinding Header}"
+                            ContentTemplate="{TemplateBinding HeaderTemplate}"
+                            VerticalContentAlignment="Center" />
+          <Border x:Name="PART_GroupBoxHeaderRight"
+                  Grid.Column="2"
+                  Height="1"
+                  VerticalAlignment="Center"
+                  Background="{DynamicResource GitExtensionsSectionBorderBrush}" />
+          <Border x:Name="PART_GroupBoxFrame"
+                  Grid.Row="1"
+                  Grid.ColumnSpan="3"
+                  BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
+                  BorderThickness="1,0,1,1"
+                  CornerRadius="0" />
+          <ContentPresenter Grid.Row="1"
+                            Grid.ColumnSpan="3"
+                            Margin="{TemplateBinding Padding}"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+        </Grid>
+      </ControlTemplate>
     </ResourceDictionary>
   </Styles.Resources>
 
@@ -818,6 +859,13 @@
   </Style>
   <Style Selector="ComboBox:disabled">
     <Setter Property="Foreground" Value="{DynamicResource GitExtensionsDisabledForegroundBrush}" />
+    <Setter Property="Background" Value="{DynamicResource GitExtensionsControlBackgroundBrush}" />
+  </Style>
+  <Style Selector="ComboBox:disabled /template/ Border#Background">
+    <Setter Property="Background" Value="{DynamicResource GitExtensionsControlBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource GitExtensionsNativeButtonDisabledBorderBrush}" />
+  </Style>
+  <Style Selector="ComboBox:disabled TextBox /template/ Border#PART_BorderElement">
     <Setter Property="Background" Value="{DynamicResource GitExtensionsControlBackgroundBrush}" />
   </Style>
   <Style Selector="ComboBoxItem">
@@ -1489,43 +1537,12 @@
     <Setter Property="VerticalAlignment" Value="Center" />
   </Style>
 
+  <Style Selector="HeaderedContentControl.gitextensions-group-frame">
+    <Setter Property="Template" Value="{StaticResource GitExtensionsGroupBoxTemplate}" />
+  </Style>
   <Style Selector="HeaderedContentControl.gitextensions-group-box">
     <Setter Property="Padding" Value="8" />
-    <Setter Property="Template">
-      <ControlTemplate>
-        <Grid RowDefinitions="Auto,*" ColumnDefinitions="8,Auto,*">
-          <Border x:Name="PART_GroupBoxHeaderLeft"
-                  Grid.Column="0"
-                  Height="1"
-                  VerticalAlignment="Center"
-                  Background="{DynamicResource GitExtensionsSectionBorderBrush}" />
-          <ContentPresenter x:Name="PART_HeaderPresenter"
-                            Grid.Column="1"
-                            Margin="3,0"
-                            Content="{TemplateBinding Header}"
-                            ContentTemplate="{TemplateBinding HeaderTemplate}"
-                            VerticalContentAlignment="Center" />
-          <Border x:Name="PART_GroupBoxHeaderRight"
-                  Grid.Column="2"
-                  Height="1"
-                  VerticalAlignment="Center"
-                  Background="{DynamicResource GitExtensionsSectionBorderBrush}" />
-          <Border x:Name="PART_GroupBoxFrame"
-                  Grid.Row="1"
-                  Grid.ColumnSpan="3"
-                  BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
-                  BorderThickness="1,0,1,1"
-                  CornerRadius="0" />
-          <ContentPresenter Grid.Row="1"
-                            Grid.ColumnSpan="3"
-                            Margin="{TemplateBinding Padding}"
-                            Content="{TemplateBinding Content}"
-                            ContentTemplate="{TemplateBinding ContentTemplate}"
-                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
-        </Grid>
-      </ControlTemplate>
-    </Setter>
+    <Setter Property="Template" Value="{StaticResource GitExtensionsGroupBoxTemplate}" />
   </Style>
 
   <Style Selector="GroupBox.gitextensions-native-group-box">
@@ -1995,7 +2012,8 @@
     <Setter Property="BorderThickness" Value="1" />
     <Setter Property="CornerRadius" Value="0" />
   </Style>
-  <Style Selector="Button.gitextensions-native-dialog-action">
+  <Style Selector="Button.gitextensions-native-dialog-action,
+                   Button.gitextensions-dialog-action">
     <Setter Property="Padding" Value="4,1" />
     <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -2016,27 +2034,42 @@
       </ControlTemplate>
     </Setter>
   </Style>
-  <Style Selector="Button.gitextensions-native-dialog-action:pointerover /template/ Border#PART_NativeButtonChrome">
+  <Style Selector="Button.gitextensions-native-dialog-action:pointerover /template/ Border#PART_NativeButtonChrome,
+                   Button.gitextensions-dialog-action:pointerover /template/ Border#PART_NativeButtonChrome">
     <Setter Property="Background" Value="{DynamicResource GitExtensionsNativeButtonPointerOverBackgroundBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource GitExtensionsNativeButtonPointerOverBorderBrush}" />
   </Style>
-  <Style Selector="Button.gitextensions-native-dialog-action:focus:not(:pointerover) /template/ Border#PART_NativeButtonChrome">
+  <Style Selector="Button.gitextensions-native-dialog-action:focus:not(:pointerover) /template/ Border#PART_NativeButtonChrome,
+                   Button.gitextensions-dialog-action:focus:not(:pointerover) /template/ Border#PART_NativeButtonChrome">
     <Setter Property="BorderBrush" Value="{DynamicResource GitExtensionsHighlightBackgroundBrush}" />
   </Style>
-  <Style Selector="Button.gitextensions-native-dialog-action:pressed /template/ Border#PART_NativeButtonChrome">
+  <Style Selector="Button.gitextensions-native-dialog-action:pressed /template/ Border#PART_NativeButtonChrome,
+                   Button.gitextensions-dialog-action:pressed /template/ Border#PART_NativeButtonChrome">
     <Setter Property="Background" Value="{DynamicResource GitExtensionsNativeButtonPressedBackgroundBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource GitExtensionsNativeButtonPressedBorderBrush}" />
   </Style>
-  <Style Selector="Button.gitextensions-native-dialog-action:pressed">
+  <Style Selector="Button.gitextensions-native-dialog-action:pressed,
+                   Button.gitextensions-dialog-action:pressed">
     <!-- WinForms changes native button chrome without scaling the control's source bounds. -->
     <Setter Property="RenderTransform" Value="none" />
   </Style>
-  <Style Selector="Button.gitextensions-native-dialog-action:disabled /template/ Border#PART_NativeButtonChrome">
+  <Style Selector="Button.gitextensions-native-dialog-action:disabled /template/ Border#PART_NativeButtonChrome,
+                   Button.gitextensions-dialog-action:disabled /template/ Border#PART_NativeButtonChrome">
     <Setter Property="Background" Value="{DynamicResource GitExtensionsNativeButtonDisabledBackgroundBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource GitExtensionsNativeButtonDisabledBorderBrush}" />
   </Style>
-  <Style Selector="Button.gitextensions-native-dialog-action:disabled">
+  <Style Selector="Button.gitextensions-native-dialog-action:disabled,
+                   Button.gitextensions-dialog-action:disabled">
     <Setter Property="Foreground" Value="{DynamicResource GitExtensionsNativeButtonDisabledForegroundBrush}" />
+  </Style>
+  <!-- WinForms marks the default button with a 1px accent frame; the chrome ignores BorderThickness. -->
+  <Style Selector="Button.gitextensions-native-dialog-action[IsDefault=true] /template/ Border#PART_NativeButtonChrome,
+                   Button.gitextensions-dialog-action[IsDefault=true] /template/ Border#PART_NativeButtonChrome">
+    <Setter Property="BorderBrush" Value="{DynamicResource GitExtensionsHighlightBackgroundBrush}" />
+  </Style>
+  <Style Selector="Button.gitextensions-native-dialog-action[IsDefault=true],
+                   Button.gitextensions-dialog-action[IsDefault=true]">
+    <Setter Property="BorderThickness" Value="1" />
   </Style>
   <Style Selector="Button:pointerover">
     <Setter Property="Background" Value="{DynamicResource GitExtensionsControlPointerOverBackgroundBrush}" />
