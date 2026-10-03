@@ -806,6 +806,11 @@
     <Setter Property="Background" Value="{DynamicResource GitExtensionsControlBackgroundBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource GitExtensionsNativeButtonDisabledBorderBrush}" />
   </Style>
+  <!-- The Fluent template paints disabled text boxes with its own dark fill; a WinForms TextBox keeps the control color. -->
+  <Style Selector="TextBox:disabled /template/ Border#PART_BorderElement">
+    <Setter Property="Background" Value="{DynamicResource GitExtensionsControlBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource GitExtensionsNativeButtonDisabledBorderBrush}" />
+  </Style>
   <Style Selector="TextBox.file-filter-active">
     <Setter Property="Background" Value="{DynamicResource GitExtensionsValidFilterBackgroundBrush}" />
   </Style>
