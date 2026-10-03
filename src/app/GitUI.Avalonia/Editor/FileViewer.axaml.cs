@@ -129,6 +129,7 @@ public partial class FileViewer : GitModuleControl
     public FileViewer()
     {
         InitializeComponent();
+        InitializeSourceToolTips();
         ignoreWhitespaceAtEol.Icon = Properties.Images.WhitespaceIgnoreEol.AdaptLightness();
         ignoreWhiteSpaces.Icon = Properties.Images.WhitespaceIgnore.AdaptLightness();
         ignoreAllWhitespaces.Icon = Properties.Images.WhitespaceIgnoreAll.AdaptLightness();
@@ -2863,6 +2864,22 @@ public partial class FileViewer : GitModuleControl
 
         void AddToolTip(string name, string source)
             => translation.AddTranslationItem(nameof(FileViewer), name, "ToolTipText", source);
+    }
+
+    // The WinForms Designer stores these as ToolStripItem.ToolTipText, so they exist before any translation is applied.
+    private void InitializeSourceToolTips()
+    {
+        ToolTip.SetTip(nextChangeButton, "Next change");
+        ToolTip.SetTip(previousChangeButton, "Previous change");
+        ToolTip.SetTip(increaseNumberOfLines, "Increase the number of lines of context");
+        ToolTip.SetTip(decreaseNumberOfLines, "Decrease the number of lines of context");
+        ToolTip.SetTip(showEntireFileButton, "Show entire file");
+        ToolTip.SetTip(showNonPrintChars, "Show nonprinting characters");
+        ToolTip.SetTip(showSyntaxHighlighting, "Show syntax highlighting");
+        ToolTip.SetTip(ignoreWhitespaceAtEol, "Ignore whitespace changes at end of line");
+        ToolTip.SetTip(ignoreWhiteSpaces, "Ignore changes in amount of whitespace");
+        ToolTip.SetTip(ignoreAllWhitespaces, "Ignore all whitespace changes");
+        ToolTip.SetTip(settingsButton, "Settings");
     }
 
     public override void TranslateItems(ITranslation translation)
