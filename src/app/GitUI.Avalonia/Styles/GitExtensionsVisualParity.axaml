@@ -370,6 +370,8 @@
           <SolidColorBrush x:Key="GitExtensionsDialogControlsBackgroundBrush" Color="#EEEEEE" />
           <SolidColorBrush x:Key="GitExtensionsReadOnlyTextInputBackgroundBrush" Color="#F0F0F0" />
           <SolidColorBrush x:Key="GitExtensionsDataGridViewGridLineBrush" Color="#646464" />
+          <SolidColorBrush x:Key="GitExtensionsDataGridViewBackgroundBrush" Color="#ABABAB" />
+          <SolidColorBrush x:Key="GitExtensionsProgressBarForegroundBrush" Color="#06B025" />
           <SolidColorBrush x:Key="GitExtensionsDataGridViewSelectionBackgroundBrush" Color="#0078D7" />
           <SolidColorBrush x:Key="GitExtensionsNativeGroupBoxBorderBrush" Color="#DCDCDC" />
           <SolidColorBrush x:Key="GitExtensionsNativeButtonBackgroundBrush" Color="#FDFDFD" />
@@ -570,6 +572,8 @@
           <SolidColorBrush x:Key="GitExtensionsDialogControlsBackgroundBrush" Color="#383838" />
           <SolidColorBrush x:Key="GitExtensionsReadOnlyTextInputBackgroundBrush" Color="#5A5A5A" />
           <SolidColorBrush x:Key="GitExtensionsDataGridViewGridLineBrush" Color="#282828" />
+          <SolidColorBrush x:Key="GitExtensionsDataGridViewBackgroundBrush" Color="#404040" />
+          <SolidColorBrush x:Key="GitExtensionsProgressBarForegroundBrush" Color="#06B025" />
           <SolidColorBrush x:Key="GitExtensionsDataGridViewSelectionBackgroundBrush" Color="#2864B4" />
           <SolidColorBrush x:Key="GitExtensionsNativeGroupBoxBorderBrush" Color="#DCDCDC" />
           <SolidColorBrush x:Key="GitExtensionsNativeButtonBackgroundBrush" Color="#333333" />
@@ -1992,6 +1996,7 @@
     <Setter Property="CornerRadius" Value="0" />
   </Style>
   <Style Selector="Button.gitextensions-native-dialog-action">
+    <Setter Property="Padding" Value="4,1" />
     <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="Template">
@@ -2687,5 +2692,27 @@
   <Style Selector="Border.gitextensions-section-separator">
     <Setter Property="Background"
             Value="{DynamicResource GitExtensionsSectionBorderBrush}" />
+  </Style>
+
+  <!-- WinForms console output: RichTextBox with SystemColors.Info background and a single border. -->
+  <Style Selector="avaloniaEdit|TextEditor.gitextensions-console-output">
+    <Setter Property="Background" Value="{DynamicResource GitExtensionsToolTipBackgroundBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource GitExtensionsToolTipForegroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource GitExtensionsControlBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="HorizontalScrollBarVisibility" Value="Disabled" />
+    <Setter Property="WordWrap" Value="True" />
+  </Style>
+  <!-- WinForms marquee ProgressBar docked to a dialog edge: 3px high, native green. -->
+  <Style Selector="ProgressBar.gitextensions-thin-progress">
+    <Setter Property="Height" Value="3" />
+    <Setter Property="MinHeight" Value="0" />
+    <Setter Property="Foreground" Value="{DynamicResource GitExtensionsProgressBarForegroundBrush}" />
+    <Setter Property="Background" Value="Transparent" />
+  </Style>
+  <!-- WinForms DataGridView: AppWorkspace colored area below the last row. -->
+  <Style Selector="ListBox.gitextensions-data-grid">
+    <Setter Property="Background" Value="{DynamicResource GitExtensionsDataGridViewBackgroundBrush}" />
+    <Setter Property="BorderThickness" Value="0" />
   </Style>
 </Styles>
