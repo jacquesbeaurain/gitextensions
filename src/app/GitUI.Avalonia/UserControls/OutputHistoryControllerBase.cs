@@ -30,9 +30,10 @@ internal abstract class OutputHistoryControllerBase : IDisposable
 
     private void Update(object? sender, EventArgs args)
     {
-        string history = _outputHistoryProvider.History;
         _textBox.InvokeAndForget(() =>
         {
+            // Read the history on the UI thread so that queued updates never apply an older snapshot over a newer one.
+            string history = _outputHistoryProvider.History;
             _textBox.Text = history;
             _textBox.CaretOffset = history.Length;
             _textBox.ScrollToEnd();
