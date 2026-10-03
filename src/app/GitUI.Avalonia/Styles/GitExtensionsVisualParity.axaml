@@ -795,12 +795,16 @@
   <Style Selector="TextBox:pointerover">
     <Setter Property="BorderBrush" Value="{DynamicResource GitExtensionsHighlightBackgroundBrush}" />
   </Style>
-  <Style Selector="TextBox:focus">
-    <Setter Property="BorderBrush" Value="{DynamicResource GitExtensionsHighlightBackgroundBrush}" />
+  <!-- Windows 11 text boxes keep their gray frame and mark focus with a 2px accent line along the bottom. -->
+  <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
+    <Setter Property="BorderBrush" Value="{DynamicResource GitExtensionsControlBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="BoxShadow" Value="inset 0 -2 0 0 #0078D7" />
   </Style>
   <Style Selector="TextBox:disabled">
     <Setter Property="Foreground" Value="{DynamicResource GitExtensionsDisabledForegroundBrush}" />
     <Setter Property="Background" Value="{DynamicResource GitExtensionsControlBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource GitExtensionsNativeButtonDisabledBorderBrush}" />
   </Style>
   <Style Selector="TextBox.file-filter-active">
     <Setter Property="Background" Value="{DynamicResource GitExtensionsValidFilterBackgroundBrush}" />
@@ -842,7 +846,7 @@
     <Setter Property="Background" Value="{DynamicResource GitExtensionsCleanupPreviewBackgroundBrush}" />
   </Style>
   <Style Selector="TextBox.gitextensions-cleanup-path-input:disabled /template/ Border#PART_BorderElement">
-    <Setter Property="Background" Value="{DynamicResource GitExtensionsWindowBackgroundBrush}" />
+    <Setter Property="Background" Value="{DynamicResource GitExtensionsControlBackgroundBrush}" />
   </Style>
   <Style Selector="ComboBox">
     <Setter Property="Theme" Value="{StaticResource GitExtensionsNativeComboBoxTheme}" />

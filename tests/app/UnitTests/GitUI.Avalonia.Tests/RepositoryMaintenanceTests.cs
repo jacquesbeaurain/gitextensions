@@ -75,10 +75,11 @@ public sealed class RepositoryMaintenanceTests
             Dispatcher.UIThread.RunJobs();
             Border includeBorder = include.GetVisualDescendants()
                 .OfType<Border>().Single(border => border.Name == "PART_BorderElement");
-            form.TryFindResource("GitExtensionsWindowBackgroundBrush", form.ActualThemeVariant, out object? windowResource)
+            // A disabled WinForms TextBox uses the control (not window) background.
+            form.TryFindResource("GitExtensionsControlBackgroundBrush", form.ActualThemeVariant, out object? controlResource)
                 .Should().BeTrue();
             includeBorder.Background.Should().BeOfType<SolidColorBrush>().Which.Color
-                .Should().Be(windowResource.Should().BeOfType<SolidColorBrush>().Which.Color);
+                .Should().Be(controlResource.Should().BeOfType<SolidColorBrush>().Which.Color);
 
             Button addPath = form.FindControl<Button>("AddInclusivePath")!;
             Border buttonChrome = addPath.GetVisualDescendants()
