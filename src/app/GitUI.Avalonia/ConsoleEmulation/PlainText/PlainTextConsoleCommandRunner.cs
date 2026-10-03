@@ -47,8 +47,8 @@ public sealed class PlainTextConsoleCommandRunner : UserControl, IPlainTextConso
             FontFamily = new FontFamily(settings.Font?.Name ?? "monospace"),
             IsReadOnly = true,
             ShowLineNumbers = false,
-            WordWrap = false,
         };
+        _editbox.Classes.Add("gitextensions-console-output");
         if (settings.Font is not null)
         {
             _editbox.FontSize = AvaloniaFontSettings.ToDeviceIndependentPixels(settings.Font.Size);
