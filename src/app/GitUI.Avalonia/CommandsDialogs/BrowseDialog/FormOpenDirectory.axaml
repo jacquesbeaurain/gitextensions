@@ -33,13 +33,13 @@
                        ToolTip.Tip="Go to parent directory..."
                        AutomationProperties.Name="Go to parent directory..."
                        Icon="{x:Static properties:Images.NavigateUp}" />
-    <compat:IconButton x:Name="folderBrowserButton"
+    <compat:IconButton Classes="gitextensions-native-dialog-action" x:Name="folderBrowserButton"
                        Grid.Row="1" Grid.Column="5"
                        Width="135" Height="25"
                        Content="_Browse..."
                        Icon="{x:Static properties:Images.BrowseFileExplorer}" />
 
-    <compat:IconButton x:Name="Load"
+    <compat:IconButton Classes="gitextensions-native-dialog-action" x:Name="Load"
                        Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3"
                        Width="164" Height="25"
                        Content="Open"

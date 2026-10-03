@@ -35,7 +35,7 @@
                 Margin="3,4"
                 HorizontalAlignment="Stretch"
                 IsEditable="True" />
-      <compat:IconButton x:Name="FromBrowse"
+      <compat:IconButton Classes="gitextensions-native-dialog-action" x:Name="FromBrowse"
                          Grid.Column="2"
                          Margin="3"
                          Width="94"
@@ -62,7 +62,7 @@
                 Margin="3,4"
                 HorizontalAlignment="Stretch"
                 IsEditable="True" />
-      <compat:IconButton x:Name="ToBrowse"
+      <compat:IconButton Classes="gitextensions-native-dialog-action" x:Name="ToBrowse"
                          Grid.Row="1" Grid.Column="2"
                          Margin="3"
                          Width="94"
@@ -107,14 +107,19 @@
                 IsEditable="True" />
       </wf:TableLayoutPanel>
 
-    <TextBlock x:Name="Info"
-               Grid.Row="1"
-               Margin="3,13,3,0"
-               Height="42"
-               Padding="6,4"
-               Background="{DynamicResource GitExtensionsKnownColorInfoBrush}"
-               TextWrapping="Wrap"
-               VerticalAlignment="Top" />
+    <!-- WinForms label with BorderStyle.FixedSingle on the Info color. -->
+    <Border Grid.Row="1"
+            Margin="3,13,3,0"
+            Height="42"
+            BorderBrush="{DynamicResource GitExtensionsControlBorderBrush}"
+            BorderThickness="1"
+            Background="{DynamicResource GitExtensionsKnownColorInfoBrush}"
+            VerticalAlignment="Top">
+      <TextBlock x:Name="Info"
+                 Padding="5,3"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Center" />
+    </Border>
 
     <HeaderedContentControl x:Name="groupBox1"
                             Classes="gitextensions-group-box"
@@ -173,7 +178,7 @@
               HorizontalAlignment="Right"
               Content="Clone"
               IsDefault="True" />
-      <compat:IconButton x:Name="LoadSSHKey"
+      <compat:IconButton Classes="gitextensions-native-dialog-action" x:Name="LoadSSHKey"
                          Margin="0,8,94,8"
                          MinWidth="120"
                          Width="120"
