@@ -55,31 +55,31 @@
     <Border Grid.Row="2"
             Classes="gitextensions-section">
       <Grid RowDefinitions="Auto,*">
-        <Grid ColumnDefinitions="300,180,*">
-          <Border x:Name="Sha"
+        <Grid Classes="gitextensions-data-grid-header" ColumnDefinitions="300,180,*">
+          <Border Classes="gitextensions-list-header-cell" x:Name="Sha"
                   Padding="6,4"
                   BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
                   BorderThickness="0,0,1,1">
-            <TextBlock FontWeight="SemiBold" Text="SHA-1" />
+            <TextBlock Text="SHA-1" />
           </Border>
-          <Border x:Name="Ref"
+          <Border Classes="gitextensions-list-header-cell" x:Name="Ref"
                   Grid.Column="1"
                   Padding="6,4"
                   BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
                   BorderThickness="0,0,1,1">
-            <TextBlock FontWeight="SemiBold" Text="Ref" />
+            <TextBlock Text="Ref" />
           </Border>
-          <Border x:Name="Action"
+          <Border Classes="gitextensions-list-header-cell" x:Name="Action"
                   Grid.Column="2"
                   Padding="6,4"
                   BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
                   BorderThickness="0,0,0,1">
-            <TextBlock FontWeight="SemiBold" Text="Action" />
+            <TextBlock Text="Action" />
           </Border>
         </Grid>
 
         <ListBox x:Name="gridReflog"
-                 Classes="gitextensions-dense-items"
+                 Classes="gitextensions-dense-items gitextensions-data-grid"
                  Grid.Row="1"
                  SelectionMode="Single">
           <ListBox.ContextMenu>

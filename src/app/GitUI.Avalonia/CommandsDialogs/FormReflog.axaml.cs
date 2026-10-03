@@ -140,9 +140,9 @@ public sealed partial class FormReflog : GitModuleForm
         row.Children.Add(CreateCell(refLine.Action, column: 2));
         return row;
 
-        static TextBlock CreateCell(string text, int column, FontFamily? fontFamily = null)
+        static Border CreateCell(string text, int column, FontFamily? fontFamily = null)
         {
-            TextBlock cell = new()
+            TextBlock content = new()
             {
                 Text = text,
                 Margin = new Avalonia.Thickness(6, 2),
@@ -151,9 +151,12 @@ public sealed partial class FormReflog : GitModuleForm
             };
             if (fontFamily is not null)
             {
-                cell.FontFamily = fontFamily;
+                content.FontFamily = fontFamily;
             }
 
+            // DataGridView draws a grid line to the right of every cell.
+            Border cell = new() { BorderThickness = new Avalonia.Thickness(0, 0, 1, 0), Child = content };
+            cell.Bind(Border.BorderBrushProperty, cell.GetResourceObservable("GitExtensionsDataGridViewGridLineBrush"));
             Grid.SetColumn(cell, column);
             return cell;
         }
