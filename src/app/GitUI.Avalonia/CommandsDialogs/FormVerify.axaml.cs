@@ -229,9 +229,9 @@ public sealed partial class FormVerify : GitModuleForm
         row.Children.Add(CreateCell(lostObject.Parent.IsZero ? string.Empty : lostObject.Parent.ToString(), 6, monospace: true));
         return row;
 
-        static TextBlock CreateCell(string text, int column, bool monospace = false, bool wrap = false)
+        static Border CreateCell(string text, int column, bool monospace = false, bool wrap = false)
         {
-            TextBlock cell = new()
+            TextBlock content = new()
             {
                 Text = text,
                 Margin = new Thickness(6, 2),
@@ -240,6 +240,10 @@ public sealed partial class FormVerify : GitModuleForm
                 VerticalAlignment = VerticalAlignment.Center,
                 FontFamily = monospace ? new FontFamily("monospace") : FontFamily.Default,
             };
+
+            // DataGridView draws a grid line to the right of every cell.
+            Border cell = new() { BorderThickness = new Thickness(0, 0, 1, 0), Child = content };
+            cell.Bind(Border.BorderBrushProperty, cell.GetResourceObservable("GitExtensionsDataGridViewGridLineBrush"));
             Grid.SetColumn(cell, column);
             return cell;
         }

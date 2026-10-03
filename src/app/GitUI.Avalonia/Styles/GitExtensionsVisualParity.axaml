@@ -2715,4 +2715,15 @@
     <Setter Property="Background" Value="{DynamicResource GitExtensionsDataGridViewBackgroundBrush}" />
     <Setter Property="BorderThickness" Value="0" />
   </Style>
+  <Style Selector="ListBox.gitextensions-data-grid ListBoxItem">
+    <Setter Property="Background" Value="{DynamicResource GitExtensionsWindowBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource GitExtensionsDataGridViewGridLineBrush}" />
+    <Setter Property="BorderThickness" Value="0,0,0,1" />
+  </Style>
+  <Style Selector="Grid.gitextensions-data-grid-header">
+    <Setter Property="Background" Value="{DynamicResource GitExtensionsWindowBackgroundBrush}" />
+  </Style>
+  <Style Selector="Grid.gitextensions-data-grid-header > Border.gitextensions-list-header-cell">
+    <Setter Property="BorderBrush" Value="{DynamicResource GitExtensionsDataGridViewGridLineBrush}" />
+  </Style>
 </Styles>

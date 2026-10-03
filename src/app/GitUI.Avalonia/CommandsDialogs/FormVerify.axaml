@@ -67,7 +67,8 @@
           Margin="0,0,0,6"
           ColumnDefinitions="700,6,*">
       <Grid RowDefinitions="25,*">
-          <Grid ColumnDefinitions="28,80,100,*,150,92,92">
+          <Grid Classes="gitextensions-data-grid-header"
+                ColumnDefinitions="28,80,100,*,150,92,92">
             <Border Padding="3,2"
                     BorderBrush="{DynamicResource GitExtensionsSectionBorderBrush}"
                     BorderThickness="0,0,1,1">
@@ -78,32 +79,32 @@
             <Border Classes="gitextensions-list-header-cell" x:Name="columnDate"
                     Grid.Column="1"
                     BorderThickness="0,0,1,1">
-              <TextBlock FontWeight="SemiBold" Text="Date" />
+              <TextBlock Text="Date" />
             </Border>
             <Border Classes="gitextensions-list-header-cell" x:Name="columnType"
                     Grid.Column="2"
                     BorderThickness="0,0,1,1">
-              <TextBlock FontWeight="SemiBold" Text="Type" />
+              <TextBlock Text="Type" />
             </Border>
             <Border Classes="gitextensions-list-header-cell" x:Name="columnSubject"
                     Grid.Column="3"
                     BorderThickness="0,0,1,1">
-              <TextBlock FontWeight="SemiBold" Text="Subject" />
+              <TextBlock Text="Subject" />
             </Border>
             <Border Classes="gitextensions-list-header-cell" x:Name="columnAuthor"
                     Grid.Column="4"
                     BorderThickness="0,0,1,1">
-              <TextBlock FontWeight="SemiBold" Text="Author" />
+              <TextBlock Text="Author" />
             </Border>
             <Border Classes="gitextensions-list-header-cell" x:Name="columnHash"
                     Grid.Column="5"
                     BorderThickness="0,0,1,1">
-              <TextBlock FontWeight="SemiBold" Text="Hash" />
+              <TextBlock Text="Hash" />
             </Border>
             <Border Classes="gitextensions-list-header-cell" x:Name="columnParent"
                     Grid.Column="6"
                     BorderThickness="0,0,0,1">
-              <TextBlock FontWeight="SemiBold" Text="Parent(s) hashs" />
+              <TextBlock Text="Parent(s) hashs" />
             </Border>
           </Grid>
 
@@ -111,7 +112,7 @@
                  Classes="gitextensions-dense-items gitextensions-data-grid"
                  Grid.Row="1"
                  SelectionMode="Single"
-                 ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ContextMenu>
               <ContextMenu x:Name="mnuLostObjects">
                 <MenuItem x:Name="mnuLostObjectView" Header="View">
