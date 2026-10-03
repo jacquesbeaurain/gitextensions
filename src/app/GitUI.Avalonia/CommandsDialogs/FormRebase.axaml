@@ -43,22 +43,22 @@
           </wf:FlowLayoutPanel>
           <wf:FlowLayoutPanel x:Name="flpnlOptionsPanelTop" Grid.Row="3" Margin="3" Height="50" IsVisible="False">
             <Canvas Height="50">
-              <CheckBox x:Name="chkInteractive" Canvas.Left="3" Canvas.Top="3" Width="121" Height="19" Content="_Interactive Rebase" />
-              <CheckBox x:Name="chkPreserveMerges" Canvas.Left="130" Canvas.Top="3" Width="112" Height="19" Content="_Preserve Merges" />
-              <CheckBox x:Name="chkAutosquash" Canvas.Left="248" Canvas.Top="3" Width="89" Height="19" Content="Autos_quash" IsEnabled="False" />
-              <CheckBox x:Name="chkStash" Canvas.Left="343" Canvas.Top="3" Width="82" Height="19" Content="A_uto stash" IsEnabled="False" />
+              <CheckBox x:Name="chkInteractive" Canvas.Left="3" Canvas.Top="3" MinWidth="121" Height="19" Content="_Interactive Rebase" />
+              <CheckBox x:Name="chkPreserveMerges" Canvas.Left="130" Canvas.Top="3" MinWidth="112" Height="19" Content="_Preserve Merges" />
+              <CheckBox x:Name="chkAutosquash" Canvas.Left="248" Canvas.Top="3" MinWidth="89" Height="19" Content="Autos_quash" IsEnabled="False" />
+              <CheckBox x:Name="chkStash" Canvas.Left="343" Canvas.Top="3" MinWidth="82" Height="19" Content="A_uto stash" IsEnabled="False" />
               <CheckBox x:Name="chkIgnoreDate"
                         compat:TranslationCompat.ToolTipPropertyName="toolTip1"
-                        Canvas.Left="431" Canvas.Top="3" Width="86" Height="19" Content="Ignore _date" />
+                        Canvas.Left="431" Canvas.Top="3" MinWidth="86" Height="19" Content="Ignore _date" />
               <CheckBox x:Name="chkCommitterDateIsAuthorDate"
                         compat:TranslationCompat.ToolTipPropertyName="toolTip1"
-                        Canvas.Left="3" Canvas.Top="28" Width="185" Height="19" Content="Co_mmitter date is author date" />
-              <CheckBox x:Name="checkBoxUpdateRefs" Canvas.Left="194" Canvas.Top="28" Width="146" Height="19" Content="Update dependent r_efs" />
+                        Canvas.Left="3" Canvas.Top="28" MinWidth="185" Height="19" Content="Co_mmitter date is author date" />
+              <CheckBox x:Name="checkBoxUpdateRefs" Canvas.Left="194" Canvas.Top="28" MinWidth="146" Height="19" Content="Update dependent r_efs" />
             </Canvas>
           </wf:FlowLayoutPanel>
           <wf:FlowLayoutPanel x:Name="flpnlOptionsPanelBottom" Grid.Row="4" Margin="3" Height="30" IsVisible="False">
             <Canvas Height="30">
-              <CheckBox x:Name="chkSpecificRange" Canvas.Left="3" Canvas.Top="5" Width="100" Height="19" Content="Specific ra_nge" />
+              <CheckBox x:Name="chkSpecificRange" Canvas.Left="3" Canvas.Top="5" MinWidth="100" Height="19" Content="Specific ra_nge" />
               <Label x:Name="lblRangeFrom" Canvas.Left="109" Canvas.Top="7" Width="66" Height="15" Padding="0" Content="_From (exc.)" Target="{Binding #txtFrom}" />
               <TextBox x:Name="txtFrom" Canvas.Left="181" Canvas.Top="3" Width="80" Height="23" IsEnabled="False" />
               <compat:IconButton x:Name="btnChooseFromRevision"

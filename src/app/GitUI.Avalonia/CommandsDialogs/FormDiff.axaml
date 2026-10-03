@@ -64,7 +64,7 @@
         <CheckBox x:Name="ckCompareToMergeBase"
                   compat:TranslationCompat.TranslateText="False"
                   Margin="3"
-                  Width="213"
+                  MinWidth="213"
                   TabIndex="9"
                   VerticalAlignment="Center"
                   Content="Compare to merge _base" />

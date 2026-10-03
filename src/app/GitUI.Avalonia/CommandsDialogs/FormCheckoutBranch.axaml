@@ -35,20 +35,20 @@
                   Margin="-5,-5,0,0"
                   Width="692" Height="33"
                   HorizontalAlignment="Left" VerticalAlignment="Top">
-            <RadioButton x:Name="rbDontChange" Canvas.Left="9" Canvas.Top="4" Margin="2" Width="96" Height="21" MinHeight="0" Content="Do_n't change" />
-            <RadioButton x:Name="rbMerge" Canvas.Left="109" Canvas.Top="4" Margin="2" Width="59" Height="21" MinHeight="0" Content="_Merge" />
-            <RadioButton x:Name="rbStash" Canvas.Left="172" Canvas.Top="4" Margin="2" Width="53" Height="21" MinHeight="0" Content="S_tash" />
-            <RadioButton x:Name="rbReset" Canvas.Left="229" Canvas.Top="4" Margin="2" Width="53" Height="21" MinHeight="0" Content="_Reset" />
-            <CheckBox x:Name="chkSetLocalChangesActionAsDefault" Canvas.Left="286" Canvas.Top="4" Margin="3" Width="96" Height="19" MinHeight="0" Content="Set as _default" />
+            <RadioButton x:Name="rbDontChange" Canvas.Left="9" Canvas.Top="4" Margin="2" MinWidth="96" Height="21" MinHeight="0" Content="Do_n't change" />
+            <RadioButton x:Name="rbMerge" Canvas.Left="109" Canvas.Top="4" Margin="2" MinWidth="59" Height="21" MinHeight="0" Content="_Merge" />
+            <RadioButton x:Name="rbStash" Canvas.Left="172" Canvas.Top="4" Margin="2" MinWidth="53" Height="21" MinHeight="0" Content="S_tash" />
+            <RadioButton x:Name="rbReset" Canvas.Left="229" Canvas.Top="4" Margin="2" MinWidth="53" Height="21" MinHeight="0" Content="_Reset" />
+            <CheckBox x:Name="chkSetLocalChangesActionAsDefault" Canvas.Left="286" Canvas.Top="4" Margin="3" MinWidth="96" Height="19" MinHeight="0" Content="Set as _default" />
           </Canvas>
         </HeaderedContentControl>
 
         <Canvas x:Name="tlpnlBranches" Width="698" Height="50">
           <RadioButton x:Name="LocalBranch" Canvas.Left="2" Canvas.Top="2"
-                       Width="93" Height="19" MinHeight="0"
+                       MinWidth="93" Height="19" MinHeight="0"
                        IsChecked="True" Content="Local _branch" />
           <RadioButton x:Name="Remotebranch" Canvas.Left="99" Canvas.Top="2"
-                       Width="551" Height="19" MinHeight="0"
+                       MinWidth="551" Height="19" MinHeight="0"
                        Content="Remote _branch" />
           <Label x:Name="label1" Canvas.Left="3" Canvas.Top="23"
                  Width="91" Height="27" Padding="0"

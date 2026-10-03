@@ -39,7 +39,7 @@
               ColumnDefinitions="239,82,*"
               RowDefinitions="25,20,24,401">
           <CheckBox x:Name="cbAlwaysShowAllCommands"
-                    Width="1458"
+                    MinWidth="1458"
                     Height="19"
                     Margin="3"
                     Grid.ColumnSpan="3"

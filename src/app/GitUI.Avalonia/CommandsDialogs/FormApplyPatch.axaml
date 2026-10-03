@@ -19,7 +19,7 @@
       <RadioButton x:Name="PatchFileMode"
                    Canvas.Left="10"
                    Canvas.Top="10"
-                   Width="74"
+                   MinWidth="74"
                    Height="19"
                    GroupName="PatchSource"
                    Content="Patch _file"
@@ -40,7 +40,7 @@
       <RadioButton x:Name="PatchDirMode"
                    Canvas.Left="10"
                    Canvas.Top="35"
-                   Width="105"
+                   MinWidth="105"
                    Height="19"
                    GroupName="PatchSource"
                    Content="Patch _directory" />
@@ -74,13 +74,13 @@
       <CheckBox x:Name="IgnoreWhitespace"
                 Canvas.Left="3"
                 Canvas.Top="34"
-                Width="105"
+                MinWidth="105"
                 Height="19"
                 Content="_Ignore Wh.spc." />
       <CheckBox x:Name="SignOff"
                 Canvas.Left="3"
                 Canvas.Top="59"
-                Width="71"
+                MinWidth="71"
                 Height="19"
                 Content="Sign-_Off" />
     </Canvas>

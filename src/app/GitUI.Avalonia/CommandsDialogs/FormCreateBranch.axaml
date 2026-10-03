@@ -54,7 +54,7 @@
 
       <CheckBox x:Name="chkCheckoutAfterCreate"
                 Canvas.Left="169" Canvas.Top="59"
-                Width="374" Height="22" MinHeight="0"
+                MinWidth="374" Height="22" MinHeight="0"
                 IsChecked="True" Content="Checkout _after create" />
 
       <usercontrols:CommitSummaryUserControl x:Name="commitSummaryUserControl1"
@@ -68,10 +68,10 @@
                               Header="Orphan">
         <WrapPanel x:Name="flowLayoutPanel1" Orientation="Horizontal">
           <CheckBox x:Name="chkCreateOrphan" Margin="11,3,3,3"
-                    Width="101" Height="19" MinHeight="0"
+                    MinWidth="101" Height="19" MinHeight="0"
                     Content="Create or_phan" ToolTip.Tip="New branch will have NO parents" />
           <CheckBox x:Name="chkClearOrphan" Margin="3"
-                    Width="203" Height="19" MinHeight="0"
+                    MinWidth="203" Height="19" MinHeight="0"
                     IsChecked="True" IsEnabled="False"
                     Content="Clear _working directory and index"
                     ToolTip.Tip="Remove files from the working directory and from the index" />

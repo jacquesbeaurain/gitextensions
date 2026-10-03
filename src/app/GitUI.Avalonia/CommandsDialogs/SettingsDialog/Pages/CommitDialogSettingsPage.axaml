@@ -18,7 +18,7 @@
             ColumnDefinitions="357,*"
             RowDefinitions="25,25,25,40,29,0,25,103">
         <CheckBox x:Name="chkAutocomplete"
-                  Width="253"
+                  MinWidth="253"
                   Height="19"
                   Margin="3"
                   HorizontalAlignment="Left"
@@ -26,7 +26,7 @@
                   Content="Provide auto-completion in commit dialog" />
         <CheckBox x:Name="chkShowErrorsWhenStagingFiles"
                   Grid.Row="1"
-                  Width="186"
+                  MinWidth="186"
                   Height="19"
                   Margin="3"
                   HorizontalAlignment="Left"
@@ -34,7 +34,7 @@
                   Content="Show errors when staging files" />
         <CheckBox x:Name="chkWriteCommitMessageInCommitWindow"
                   Grid.Row="3"
-                  Width="329"
+                  MinWidth="329"
                   Height="34"
                   Margin="3"
                   HorizontalAlignment="Left"
@@ -60,7 +60,7 @@
                        Value="1" />
         <CheckBox x:Name="cbRememberAmendCommitState"
                   Grid.Row="6"
-                  Width="351"
+                  MinWidth="351"
                   Height="19"
                   Margin="3"
                   HorizontalAlignment="Left"
@@ -76,21 +76,21 @@
           <Grid x:Name="flowLayoutPanel1"
                 RowDefinitions="25,25,25">
             <CheckBox x:Name="chkShowCommitAndPush"
-                      Width="112"
+                      MinWidth="112"
                       Height="19"
                       Margin="3"
                       HorizontalAlignment="Left"
                       Content="Commit &amp; Push" />
             <CheckBox x:Name="chkShowResetWorkTreeChanges"
                       Grid.Row="1"
-                      Width="156"
+                      MinWidth="156"
                       Height="19"
                       Margin="3"
                       HorizontalAlignment="Left"
                       Content="Reset Unstaged Changes" />
             <CheckBox x:Name="chkShowResetAllChanges"
                       Grid.Row="2"
-                      Width="120"
+                      MinWidth="120"
                       Height="19"
                       Margin="3"
                       HorizontalAlignment="Left"
@@ -99,7 +99,7 @@
         </GroupBox>
         <CheckBox x:Name="chkEnsureCommitMessageSecondLineEmpty"
                   Grid.Row="2"
-                  Width="300"
+                  MinWidth="300"
                   Height="19"
                   Margin="3"
                   HorizontalAlignment="Left"

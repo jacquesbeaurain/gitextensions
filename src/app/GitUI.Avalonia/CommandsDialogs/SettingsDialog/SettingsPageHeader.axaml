@@ -45,7 +45,7 @@
             <TextBlock x:Name="arrowDistributed" Margin="3,4" TabIndex="3" VerticalAlignment="Center" Text="&lt;&lt;" />
             <RadioButton x:Name="DistributedRB" Margin="3,4" TabIndex="4" Content="Distributed with current repository" />
             <TextBlock x:Name="arrowGlobal" Margin="3,4" TabIndex="5" VerticalAlignment="Center" Text="&lt;&lt;" />
-            <RadioButton x:Name="GlobalRB" Width="156" Margin="3,4" TabIndex="6" Content="Global for all repositories" />
+            <RadioButton x:Name="GlobalRB" MinWidth="156" Margin="3,4" TabIndex="6" Content="Global for all repositories" />
             <TextBlock x:Name="arrowSystem" Margin="3,4" TabIndex="7" VerticalAlignment="Center" Text="&lt;&lt;" />
             <RadioButton x:Name="SystemRB" Margin="3,4" TabIndex="8" Content="System" />
           </StackPanel>

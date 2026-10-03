@@ -134,14 +134,14 @@
                   Grid.Row="4"
                   TabIndex="8"
                   Margin="3"
-                  Width="584"
+                  MinWidth="584"
                   Height="19"
                   Content="_Automatically create a commit" />
         <CheckBox x:Name="cbxAddReference"
                   Grid.Row="5"
                   TabIndex="9"
                   Margin="3"
-                  Width="584"
+                  MinWidth="584"
                   Height="19"
                   Content="A_dd commit reference to commit message" />
       </wf:TableLayoutPanel>

@@ -47,7 +47,7 @@
     <CheckBox x:Name="force"
               Canvas.Left="71"
               Canvas.Top="32"
-              Width="55"
+              MinWidth="55"
               Height="19"
               Content="Force" />
   </Canvas>
