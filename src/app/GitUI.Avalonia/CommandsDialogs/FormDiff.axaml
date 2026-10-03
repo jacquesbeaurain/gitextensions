@@ -93,7 +93,7 @@
                     Orientation="Horizontal"
                     TabIndex="14">
           <Label x:Name="lblFirstCommit"
-                 Margin="3,0"
+                 Margin="3,6,3,0"
                  MinWidth="200"
                  Height="15"
                  Padding="0"
@@ -138,7 +138,7 @@
                     Orientation="Horizontal"
                     TabIndex="15">
           <Label x:Name="lblSecondCommit"
-                 Margin="3,0"
+                 Margin="3,6,3,0"
                  MinWidth="200"
                  Height="15"
                  Padding="0"
