@@ -41,34 +41,31 @@
               <HyperlinkButton x:Name="llblShowOptions" Margin="3,7" Width="79" Height="15" Padding="0" Content="Show options" />
             </StackPanel>
           </wf:FlowLayoutPanel>
-          <wf:FlowLayoutPanel x:Name="flpnlOptionsPanelTop" Grid.Row="3" Margin="3" Height="50" IsVisible="False">
-            <Canvas Height="50">
-              <CheckBox x:Name="chkInteractive" Canvas.Left="3" Canvas.Top="3" MinWidth="121" Height="19" Content="_Interactive Rebase" />
-              <CheckBox x:Name="chkPreserveMerges" Canvas.Left="130" Canvas.Top="3" MinWidth="112" Height="19" Content="_Preserve Merges" />
-              <CheckBox x:Name="chkAutosquash" Canvas.Left="248" Canvas.Top="3" MinWidth="89" Height="19" Content="Autos_quash" IsEnabled="False" />
-              <CheckBox x:Name="chkStash" Canvas.Left="343" Canvas.Top="3" MinWidth="82" Height="19" Content="A_uto stash" IsEnabled="False" />
+          <wf:FlowLayoutPanel x:Name="flpnlOptionsPanelTop" Grid.Row="3" Margin="3" IsVisible="False">
+            <WrapPanel Orientation="Horizontal">
+              <CheckBox x:Name="chkInteractive" Margin="3" MinWidth="121" Height="19" Content="_Interactive Rebase" />
+              <CheckBox x:Name="chkPreserveMerges" Margin="3" MinWidth="112" Height="19" Content="_Preserve Merges" />
+              <CheckBox x:Name="chkAutosquash" Margin="3" MinWidth="89" Height="19" Content="Autos_quash" IsEnabled="False" />
+              <CheckBox x:Name="chkStash" Margin="3" MinWidth="82" Height="19" Content="A_uto stash" IsEnabled="False" />
               <CheckBox x:Name="chkIgnoreDate"
-                        compat:TranslationCompat.ToolTipPropertyName="toolTip1"
-                        Canvas.Left="431" Canvas.Top="3" MinWidth="86" Height="19" Content="Ignore _date" />
+                        compat:TranslationCompat.ToolTipPropertyName="toolTip1" Margin="3" MinWidth="86" Height="19" Content="Ignore _date" />
               <CheckBox x:Name="chkCommitterDateIsAuthorDate"
-                        compat:TranslationCompat.ToolTipPropertyName="toolTip1"
-                        Canvas.Left="3" Canvas.Top="28" MinWidth="185" Height="19" Content="Co_mmitter date is author date" />
-              <CheckBox x:Name="checkBoxUpdateRefs" Canvas.Left="194" Canvas.Top="28" MinWidth="146" Height="19" Content="Update dependent r_efs" />
-            </Canvas>
+                        compat:TranslationCompat.ToolTipPropertyName="toolTip1" Margin="3" MinWidth="185" Height="19" Content="Co_mmitter date is author date" />
+              <CheckBox x:Name="checkBoxUpdateRefs" Margin="3" MinWidth="146" Height="19" Content="Update dependent r_efs" />
+            </WrapPanel>
           </wf:FlowLayoutPanel>
-          <wf:FlowLayoutPanel x:Name="flpnlOptionsPanelBottom" Grid.Row="4" Margin="3" Height="30" IsVisible="False">
-            <Canvas Height="30">
-              <CheckBox x:Name="chkSpecificRange" Canvas.Left="3" Canvas.Top="5" MinWidth="100" Height="19" Content="Specific ra_nge" />
-              <Label x:Name="lblRangeFrom" Canvas.Left="109" Canvas.Top="7" Width="66" Height="15" Padding="0" Content="_From (exc.)" Target="{Binding #txtFrom}" />
-              <TextBox x:Name="txtFrom" Canvas.Left="181" Canvas.Top="3" Width="80" Height="23" IsEnabled="False" />
+          <wf:FlowLayoutPanel x:Name="flpnlOptionsPanelBottom" Grid.Row="4" Margin="3" IsVisible="False">
+            <WrapPanel Orientation="Horizontal">
+              <CheckBox x:Name="chkSpecificRange" Margin="3" VerticalAlignment="Center" MinWidth="100" Height="19" Content="Specific ra_nge" />
+              <Label x:Name="lblRangeFrom" Margin="3" VerticalAlignment="Center" Width="66" Height="15" Padding="0" Content="_From (exc.)" Target="{Binding #txtFrom}" />
+              <TextBox x:Name="txtFrom" Margin="3" Width="80" Height="23" IsEnabled="False" />
               <compat:IconButton x:Name="btnChooseFromRevision"
-                                 Classes="gitextensions-icon-only"
-                                 Canvas.Left="267" Canvas.Top="3" Width="25" Height="24"
+                                 Classes="gitextensions-icon-only" Margin="3" Width="25" Height="24"
                                  Icon="{x:Static properties:Images.SelectRevision}"
                                  IsEnabled="False" />
-              <Label x:Name="lblRangeTo" Canvas.Left="298" Canvas.Top="7" Width="20" Height="15" Padding="0" Content="_To" Target="{Binding #cboTo}" />
-              <ComboBox x:Name="cboTo" Canvas.Left="324" Canvas.Top="3" Width="184" Height="23" IsEditable="True" IsEnabled="False" />
-            </Canvas>
+              <Label x:Name="lblRangeTo" Margin="3" VerticalAlignment="Center" Width="20" Height="15" Padding="0" Content="_To" Target="{Binding #cboTo}" />
+              <ComboBox x:Name="cboTo" Margin="3" Width="184" Height="23" IsEditable="True" IsEnabled="False" />
+            </WrapPanel>
           </wf:FlowLayoutPanel>
           <TextBlock x:Name="lblCommitsToReapply" Grid.Row="6" Margin="3,0" Height="15" Text="Commits to re-apply:" />
           <gitui:PatchGrid x:Name="PatchGrid" Grid.Row="7" Margin="3,2" IsTabStop="True" />
