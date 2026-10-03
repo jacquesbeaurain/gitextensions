@@ -48,7 +48,7 @@
                              Width="28"
                              Height="28"
                              Margin="4,0,0,0"
-                             Classes="gitextensions-icon-only"
+                             Classes="gitextensions-icon-only gitextensions-native-dialog-action"
                              Icon="{x:Static properties:Images.ResetWorkingDirChanges}"
                              ToolTip.Tip="Reset to default"
                              compat:TranslationCompat.ToolTipPropertyName="consoleFontToolTip"

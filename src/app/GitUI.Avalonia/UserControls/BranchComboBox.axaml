@@ -13,7 +13,7 @@
               VerticalAlignment="Top"
               Margin="0,3,0,0" />
     <compat:IconButton x:Name="selectMultipleBranchesButton"
-                       Classes="gitextensions-icon-only"
+                       Classes="gitextensions-icon-only gitextensions-native-dialog-action"
                        Grid.Column="1"
                        Width="23"
                        MinHeight="0"

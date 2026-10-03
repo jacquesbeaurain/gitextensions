@@ -23,7 +23,7 @@
                    TextWrapping="Wrap" />
         <compat:IconButton x:Name="copyButton"
                            Grid.Column="1"
-                           Classes="gitextensions-icon-only"
+                           Classes="gitextensions-icon-only gitextensions-native-dialog-action"
                            VerticalAlignment="Top"
                            Width="25" Height="26"
                            AutomationProperties.Name="Copy environment info"

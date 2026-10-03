@@ -38,7 +38,7 @@
                    Height="30"
                    Text="Choose another&#10;revision:" />
         <Button x:Name="btnChooseRevision"
-                Classes="gitextensions-icon-only"
+                Classes="gitextensions-icon-only gitextensions-native-dialog-action"
                 Canvas.Left="2"
                 Canvas.Top="33"
                 Width="25"
@@ -129,7 +129,7 @@
                        Height="35"
                        Text="Choose revision to &#10;compare with first:" />
             <Button x:Name="btnDiffChooseRevision"
-                    Classes="gitextensions-icon-only"
+                    Classes="gitextensions-icon-only gitextensions-native-dialog-action"
                     Canvas.Left="471"
                     Canvas.Top="210"
                     Width="25"

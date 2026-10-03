@@ -65,7 +65,7 @@
                     HorizontalAlignment="Stretch">
           <Canvas Width="584" Height="30">
           <Button x:Name="btnChooseRevision"
-                  Classes="gitextensions-icon-only"
+                  Classes="gitextensions-icon-only gitextensions-native-dialog-action"
                   TabIndex="5"
                   Canvas.Left="556"
                   Canvas.Top="3"

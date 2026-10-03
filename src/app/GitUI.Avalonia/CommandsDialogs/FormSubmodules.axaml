@@ -74,7 +74,7 @@
             <TextBox x:Name="SubModuleBranch" IsReadOnly="True" />
             <StackPanel x:Name="flowLayoutPanel2" Grid.Column="1">
               <compat:IconButton x:Name="Pull"
-                                 Classes="gitextensions-icon-only"
+                                 Classes="gitextensions-icon-only gitextensions-native-dialog-action"
                                  Width="24" Height="24"
                                  MinWidth="24" MinHeight="24"
                                  Padding="3"

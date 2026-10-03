@@ -64,7 +64,7 @@
                Grid.Column="1"
                IsReadOnly="True" />
       <compat:IconButton x:Name="btRefresh"
-                         Classes="gitextensions-icon-only"
+                         Classes="gitextensions-icon-only gitextensions-native-dialog-action"
                          Grid.Column="2"
                          Width="34"
                          Icon="{x:Static properties:Images.ReloadRevisions}" />

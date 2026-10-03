@@ -60,7 +60,7 @@
               <Label x:Name="lblRangeFrom" Margin="3" VerticalAlignment="Center" Width="66" Height="15" Padding="0" Content="_From (exc.)" Target="{Binding #txtFrom}" />
               <TextBox x:Name="txtFrom" Margin="3" Width="80" Height="23" IsEnabled="False" />
               <compat:IconButton x:Name="btnChooseFromRevision"
-                                 Classes="gitextensions-icon-only" Margin="3" Width="25" Height="24"
+                                 Classes="gitextensions-icon-only gitextensions-native-dialog-action" Margin="3" Width="25" Height="24"
                                  Icon="{x:Static properties:Images.SelectRevision}"
                                  IsEnabled="False" />
               <Label x:Name="lblRangeTo" Margin="3" VerticalAlignment="Center" Width="20" Height="15" Padding="0" Content="_To" Target="{Binding #cboTo}" />
