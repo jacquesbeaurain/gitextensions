@@ -1,6 +1,7 @@
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media;
+using Avalonia.Threading;
 using GitUI.Compat;
 
 namespace GitUI.ConsoleEmulation.PlainText;
@@ -78,6 +79,9 @@ internal sealed class PlainTextConsoleShellRunner : IConsoleShellRunner, IDispos
     public void FocusTerminal()
     {
         _commandInput.Focus();
+
+        // Switching the hosting tab can move focus to the tab strip afterwards, so assert it again once pending UI work has run.
+        Dispatcher.UIThread.Post(() => _commandInput.Focus(), DispatcherPriority.Input);
     }
 
     public void StartShell(string workDir)
