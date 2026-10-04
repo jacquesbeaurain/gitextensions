@@ -105,7 +105,7 @@ public sealed class RebaseTests
             nameof(FormRebase),
             "chkCommitterDateIsAuthorDate",
             "toolTip1",
-            "Sets the commit date to the original author date\r\n(instead of the current date).");
+            "Sets the commit date to the original author date\n(instead of the current date).");
         translation.Received(1).AddTranslationItem(nameof(FormRebase), "chkIgnoreDate", "Text", "Ignore &date");
         translation.Received(1).AddTranslationItem(
             nameof(FormRebase),
