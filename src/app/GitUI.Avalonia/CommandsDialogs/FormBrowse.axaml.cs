@@ -135,6 +135,7 @@ public sealed partial class FormBrowse : GitModuleForm, IBrowseRepo
         commitInfoRightHost.SizeChanged += CommitInfoHost_SizeChanged;
         toolStripSplitStash.Content = string.Empty;
         _formBrowseMenus = new FormBrowseMenus(mainMenuStrip);
+        NativeMenuMirror.AttachIfSupported(this, mainMenuStrip);
         InitializeWorkspaceLayout();
         InitializeToolbarOverflow();
         InitializeComplete();
@@ -173,6 +174,7 @@ public sealed partial class FormBrowse : GitModuleForm, IBrowseRepo
         InitializeComponent();
         toolStripSplitStash.Content = string.Empty;
         _formBrowseMenus = new FormBrowseMenus(mainMenuStrip);
+        NativeMenuMirror.AttachIfSupported(this, mainMenuStrip);
 
         _hasRuntimeCommands = true;
         _shellProvider = commands.GetService(typeof(IShellProvider)) as IShellProvider ?? _shellProvider;
