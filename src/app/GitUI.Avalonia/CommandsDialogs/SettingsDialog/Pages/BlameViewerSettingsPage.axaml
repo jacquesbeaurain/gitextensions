@@ -61,13 +61,13 @@
         </Grid>
       </GroupBox>
       <GroupBox x:Name="groupBoxBlameSettings"
-                MinWidth="319"
+                Width="319"
                 Height="97"
                 Padding="-3"
                 HorizontalAlignment="Left"
                 Header="Blame settings">
         <Grid x:Name="tableLayoutPanelBlameSettings"
-              MinWidth="313"
+              Width="313"
               RowDefinitions="25,25,25">
           <CheckBox x:Name="cbIgnoreWhitespace"
                     Height="19"
