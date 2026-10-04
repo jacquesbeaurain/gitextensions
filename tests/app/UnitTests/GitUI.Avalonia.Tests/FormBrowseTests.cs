@@ -2180,6 +2180,9 @@ public sealed class FormBrowseTests
             form.Show();
             await WaitUntilAsync(() => form.RevisionGrid.SelectedRevision?.IsArtificial == true);
 
+            // Toggling skips artificial commits without changes, and the change count arrives asynchronously after the load.
+            await WaitUntilAsync(() => form.RevisionGrid.GetChangeCount(ObjectId.WorkTreeId)?.HasChanges == true);
+
             MenuItem navigate = GetMainMenuItem(form, "navigateToolStripMenuItem");
             MenuItem goToCurrent = GetTaggedMenuItem(navigate, "GotoCurrentRevision");
             MenuItem toggleArtificial = GetTaggedMenuItem(navigate, "ToggleBetweenArtificialAndHeadCommits");
@@ -3981,7 +3984,13 @@ public sealed class FormBrowseTests
             await Task.Delay(10);
         }
 
-        condition().Should().BeTrue("the repository reload should complete before the timeout");
+        condition().Should().BeTrue(
+            "the repository reload should complete before the timeout (threads={0}, queued={1}, pending={2}, process threads={3}, handles={4})",
+            ThreadPool.ThreadCount,
+            ThreadPool.PendingWorkItemCount,
+            ThreadPool.CompletedWorkItemCount,
+            Process.GetCurrentProcess().Threads.Count,
+            Process.GetCurrentProcess().HandleCount);
     }
 
     private static void Click(TopLevel topLevel, Control control, MouseButton button)
