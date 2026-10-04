@@ -81,14 +81,14 @@ internal class SettingControlBindingsCaptureSurface : Grid
         int row = _layout.RowDefinitions.Count;
         double rowHeight = control.Name switch
         {
-            "boolControl" => 29,
-            "credentialsControl" => 51,
+            "boolControl" => 30,
+            "credentialsControl" => 52,
             "pseudoControl" => 45,
-            _ => 28,
+            _ => 29,
         };
         // WinForms TableLayoutPanel's AutoSize algorithm uses each source control's
         // preferred height. Avalonia's arranged track contributes the shared final boundary
-        // DIP, so these integer definitions are one less than the effective WinForms rows.
+        // DIP, so these integer definitions must match the effective WinForms rows.
         // CredentialsControl contributes its inherited 46-DIP preferred height while its
         // contradictory min/max contract arranges the control at 24 DIPs.
         _layout.RowDefinitions.Add(new RowDefinition(new GridLength(rowHeight)));
