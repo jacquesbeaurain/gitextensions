@@ -225,6 +225,14 @@ public sealed class NBugReportsDecisionRouteTests
         };
         startInfo.ArgumentList.Add("test");
         startInfo.ArgumentList.Add("tests/app/UnitTests/GitUI.Avalonia.Tests/GitUI.Avalonia.Tests.csproj");
+
+        // --no-build only finds the output of the configuration this test assembly was built with.
+        startInfo.ArgumentList.Add("-c");
+#if DEBUG
+        startInfo.ArgumentList.Add("Debug");
+#else
+        startInfo.ArgumentList.Add("Release");
+#endif
         startInfo.ArgumentList.Add("-p:BuildAvalonia=true");
         startInfo.ArgumentList.Add("--no-build");
         startInfo.ArgumentList.Add("--no-restore");
