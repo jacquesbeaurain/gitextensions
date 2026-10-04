@@ -76,12 +76,17 @@ public sealed class IsolateAppSettingsPerFixtureAttribute : NUnitAttribute, ITes
             GitExtSettingsCache cache = GitExtSettingsCache.Create(Path.Combine(directory, "GitExtensions.settings"));
             FixtureSettings fixtureSettings = new(accessor.SettingsContainer, cache, directory);
             accessor.SettingsContainer = new DistributedSettings(lowerPriority: null, cache, SettingLevel.Unknown);
+
+            // CurrentTranslation is a separate static override that tests set to exercise other languages; it must
+            // not leak the translated (and differently line-ended) strings into the next fixture.
+            AppSettings.CurrentTranslation = null;
             return fixtureSettings;
         }
 
         public void Dispose()
         {
             AppSettings.GetTestAccessor().SettingsContainer = _original;
+            AppSettings.CurrentTranslation = null;
             _cache.Dispose();
             try
             {

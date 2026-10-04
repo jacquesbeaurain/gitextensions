@@ -87,7 +87,10 @@ public sealed class TranslationParityTests
             .Select(group => $"{group.Key}: {string.Join(" | ", group.Select(item => Quote(item.NeutralValue)).Distinct(StringComparer.Ordinal))}")
             .Order(StringComparer.Ordinal)
             .ToArray();
+        // The WinForms Designer records empty strings (such as the spell editor's TextBox.Text) as translatable keys
+        // at runtime, but the English catalog only lists non-empty source text.
         string[] missingKeys = emittedItems
+            .Where(item => !string.IsNullOrEmpty(item.NeutralValue))
             .Select(item => item.Key)
             .Distinct()
             .Where(key => !catalog.ContainsKey(key))
@@ -111,7 +114,7 @@ public sealed class TranslationParityTests
             duplicateConflicts);
 
         constructionFailures.Should().BeEmpty("every translatable twin view must be inspectable in one sweep");
-        missingKeys.Should().BeEmpty("Avalonia must not emit keys absent from the WinForms English catalog");
+        missingKeys.Should().BeEmpty("Avalonia must not emit keys absent from the WinForms English catalog: {0}", string.Join(", ", missingKeys));
         sourceMismatches.Should().BeEmpty("an existing key must retain its established neutral source text");
         duplicateConflicts.Should().BeEmpty("one translation key cannot have multiple neutral source strings");
     }
