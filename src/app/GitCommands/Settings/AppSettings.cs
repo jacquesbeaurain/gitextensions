@@ -2327,6 +2327,15 @@ public static partial class AppSettings
             set => AppSettings.ApplicationDataPath = value;
         }
 
+        /// <summary>
+        /// Lets tests give each fixture its own settings store instead of sharing (and persisting) the process-wide one.
+        /// </summary>
+        public readonly DistributedSettings SettingsContainer
+        {
+            get => AppSettings.SettingsContainer;
+            set => AppSettings.SettingsContainer = value;
+        }
+
         public readonly void ResetDocumentationBaseUrl() => AppSettings._documentationBaseUrl = null;
     }
 }
