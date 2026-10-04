@@ -5,6 +5,13 @@
              xmlns:properties="using:GitUI.Properties"
              xmlns:userControls="using:GitUI.UserControls"
              x:Class="GitUI.FileStatusList">
+  <!-- Filter toggles keep their WinForms colors independent of the theme, and resolve before the control is attached. -->
+  <UserControl.Resources>
+    <SolidColorBrush x:Key="GitExtensionsFileStatusUnequalChangeBrush" Color="#FF0000" />
+    <SolidColorBrush x:Key="GitExtensionsFileStatusOnlyBBrush" Color="#BD7CFF" />
+    <SolidColorBrush x:Key="GitExtensionsFileStatusOnlyABrush" Color="#A8A800" />
+    <SolidColorBrush x:Key="GitExtensionsFileStatusSameChangeBrush" Color="#00A800" />
+  </UserControl.Resources>
   <UserControl.Styles>
     <Style Selector="Button.gitextensions-toolbar-button.filestatus-toolbar-item, ToggleButton.gitextensions-toolbar-button.filestatus-toolbar-item, compat|IconSplitButton.gitextensions-toolbar-button.filestatus-toolbar-item, compat|IconDropDownButton.gitextensions-toolbar-button.filestatus-toolbar-item">
       <Setter Property="Height" Value="22" />
