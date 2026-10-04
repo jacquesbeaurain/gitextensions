@@ -3984,13 +3984,7 @@ public sealed class FormBrowseTests
             await Task.Delay(10);
         }
 
-        condition().Should().BeTrue(
-            "the repository reload should complete before the timeout (threads={0}, queued={1}, pending={2}, process threads={3}, handles={4})",
-            ThreadPool.ThreadCount,
-            ThreadPool.PendingWorkItemCount,
-            ThreadPool.CompletedWorkItemCount,
-            Process.GetCurrentProcess().Threads.Count,
-            Process.GetCurrentProcess().HandleCount);
+        condition().Should().BeTrue("the repository reload should complete before the timeout");
     }
 
     private static void Click(TopLevel topLevel, Control control, MouseButton button)
