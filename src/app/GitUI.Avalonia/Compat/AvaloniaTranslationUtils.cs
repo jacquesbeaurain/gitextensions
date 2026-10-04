@@ -65,6 +65,12 @@ internal static class AvaloniaTranslationUtils
                 continue;
             }
 
+            // The owning dialogs translate data grid column captions through the WinForms HeaderText property.
+            if (item is WinFormsControls.DataGridViewTextBoxColumn or WinFormsControls.DataGridViewCheckBoxColumn)
+            {
+                continue;
+            }
+
             bool hostHasWinFormsText = name == "$this"
                 && item is not Window
                 && item.GetType().GetProperty("Text")?.PropertyType == typeof(string);
@@ -141,6 +147,12 @@ internal static class AvaloniaTranslationUtils
             }
 
             if (name != "$this" && item is Window)
+            {
+                continue;
+            }
+
+            // The owning dialogs translate data grid column captions through the WinForms HeaderText property.
+            if (item is WinFormsControls.DataGridViewTextBoxColumn or WinFormsControls.DataGridViewCheckBoxColumn)
             {
                 continue;
             }

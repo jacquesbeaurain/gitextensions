@@ -95,7 +95,7 @@
                                  Classes="gitextensions-toolbar-button gitextensions-icon-only"
                                  Content="Blame options"
                                  ToolTip.Tip="Blame options"
-                                 compat:TranslationCompat.UseToolTipText="True"
+                                 compat:TranslationCompat.TranslateToolTip="False"
                                  Icon="{x:Static properties:Images.Blame}">
         <compat:IconDropDownButton.Flyout>
           <MenuFlyout>

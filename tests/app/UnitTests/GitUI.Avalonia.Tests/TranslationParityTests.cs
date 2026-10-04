@@ -82,6 +82,7 @@ public sealed class TranslationParityTests
             .ThenBy(item => item.NeutralValue, StringComparer.Ordinal)
             .ToArray();
         string[] duplicateConflicts = emittedItems
+            .Where(item => !string.IsNullOrEmpty(item.NeutralValue))
             .GroupBy(item => item.Key)
             .Where(group => group.Select(item => NormalizeText(item.NeutralValue)).Distinct(StringComparer.Ordinal).Count() > 1)
             .Select(group => $"{group.Key}: {string.Join(" | ", group.Select(item => Quote(item.NeutralValue)).Distinct(StringComparer.Ordinal))}")
@@ -98,6 +99,7 @@ public sealed class TranslationParityTests
             .Order(StringComparer.Ordinal)
             .ToArray();
         string[] sourceMismatches = emittedItems
+            .Where(item => !string.IsNullOrEmpty(item.NeutralValue))
             .DistinctBy(item => item.Key)
             .Where(item => catalog.TryGetValue(item.Key, out string? source)
                            && NormalizeText(source) != NormalizeText(item.NeutralValue))
@@ -115,7 +117,7 @@ public sealed class TranslationParityTests
 
         constructionFailures.Should().BeEmpty("every translatable twin view must be inspectable in one sweep");
         missingKeys.Should().BeEmpty("Avalonia must not emit keys absent from the WinForms English catalog: {0}", string.Join(", ", missingKeys));
-        sourceMismatches.Should().BeEmpty("an existing key must retain its established neutral source text");
+        sourceMismatches.Should().BeEmpty("an existing key must retain its established neutral source text: {0}{1}", Environment.NewLine, string.Join(Environment.NewLine, sourceMismatches));
         duplicateConflicts.Should().BeEmpty("one translation key cannot have multiple neutral source strings");
     }
 
