@@ -150,14 +150,14 @@ public sealed class FormEditorTests
     }
 
     [AvaloniaTest]
-    public void GitUICommands_should_report_invalid_or_unported_command_lines_explicitly()
+    public void GitUICommands_should_report_invalid_command_lines_explicitly()
     {
+        // Every command is ported now: "about" opens the (modal) about dialog, which AboutDialogsTests covers,
+        // so running it here would block the test host on the open dialog.
         _commands.RunCommand(["GitExtensions.Avalonia", "fileeditor"]).Should().BeFalse();
-        _commands.RunCommand(["GitExtensions.Avalonia", "about"]).Should().BeFalse();
 
         _stubMessageBoxHost.Messages.Should().ContainInOrder(
-            "Cannot open file editor, there is no file selected.",
-            "The command \"about\" is not available in the Avalonia port yet.");
+            "Cannot open file editor, there is no file selected.");
     }
 
     private static async Task WaitUntilAsync(Func<bool> condition)
