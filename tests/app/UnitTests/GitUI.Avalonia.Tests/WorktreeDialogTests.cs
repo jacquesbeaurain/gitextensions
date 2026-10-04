@@ -120,7 +120,7 @@ public sealed class WorktreeDialogTests
         translation.Received(1).AddTranslationItem(nameof(FormCreateWorktree), "gbxWhatToCheckout", "Text", "What to checkout:");
         translation.Received(1).AddTranslationItem(nameof(FormCreateWorktree), "lblNewWorktreeFolder", "Text", "New worktree &directory:");
         translation.Received(1).AddTranslationItem(nameof(FormCreateWorktree), "rbCheckoutExistingBranch", "Text", "Checkout an &existing branch:");
-        translation.Received(1).AddTranslationItem(nameof(FormCreateWorktree), "rbCreateNewBranch", "Text", "Create a &new branch:\r\n(from current commit)");
+        translation.Received(1).AddTranslationItem(nameof(FormCreateWorktree), "rbCreateNewBranch", "Text", "Create a &new branch:\n(from current commit)");
     }
 
     [AvaloniaTest]

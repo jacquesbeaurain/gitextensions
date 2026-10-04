@@ -4,77 +4,64 @@ using GitCommands.Settings;
 using GitExtensions.Extensibility.Settings;
 using NUnit.Framework.Interfaces;
 
-[assembly: GitExtensionsTests.IsolateAppSettingsPerFixture]
+[assembly: GitExtensionsTests.IsolateAppSettingsPerTest]
 
 namespace GitExtensionsTests;
 
 /// <summary>
-///  Gives every test fixture its own temporary <see cref="AppSettings"/> store, so one fixture's settings
-///  changes (or a failed restore in a <c>finally</c> block) can never change the outcome of another fixture,
-///  and tests never read or write the developer's real settings file. It also empties the process-wide git
-///  command cache before every test: that cache is keyed by command text only, so a repository created by one
-///  test could otherwise answer the commands of another.
+///  Gives every test its own temporary <see cref="AppSettings"/> store, so one test's settings changes (or a
+///  failed restore in a <c>finally</c> block) can never change the outcome of another test, and tests never read
+///  or write the developer's real settings file. It also empties the process-wide git command cache: that cache
+///  is keyed by command text only, so a repository created by one test could otherwise answer the commands of
+///  another. NUnit delivers assembly-level actions to tests but not to fixtures, hence the per-test scope.
 /// </summary>
 [AttributeUsage(AttributeTargets.Assembly)]
-public sealed class IsolateAppSettingsPerFixtureAttribute : NUnitAttribute, ITestAction
+public sealed class IsolateAppSettingsPerTestAttribute : NUnitAttribute, ITestAction
 {
-    private static readonly Dictionary<string, FixtureSettings> _active = [];
+    private static readonly Dictionary<string, TestSettings> _active = [];
 
-    public ActionTargets Targets => ActionTargets.Suite | ActionTargets.Test;
+    public ActionTargets Targets => ActionTargets.Test;
 
     public void BeforeTest(ITest test)
     {
         GitModule.GitCommandCache.Clear();
-        if (!IsFixture(test))
-        {
-            return;
-        }
-
         lock (_active)
         {
-            _active[test.FullName] = FixtureSettings.Install();
+            _active[test.Id] = TestSettings.Install();
         }
     }
 
     public void AfterTest(ITest test)
     {
-        if (!IsFixture(test))
-        {
-            return;
-        }
-
-        FixtureSettings? settings;
+        TestSettings? settings;
         lock (_active)
         {
-            _active.Remove(test.FullName, out settings);
+            _active.Remove(test.Id, out settings);
         }
 
         settings?.Dispose();
     }
 
-    // Namespace and assembly suites also receive suite actions; only a class fixture owns its own settings.
-    private static bool IsFixture(ITest test) => test.IsSuite && test.TypeInfo is not null;
-
-    private sealed class FixtureSettings : IDisposable
+    private sealed class TestSettings : IDisposable
     {
         private readonly DistributedSettings _original;
         private readonly GitExtSettingsCache _cache;
         private readonly string _directory;
 
-        private FixtureSettings(DistributedSettings original, GitExtSettingsCache cache, string directory)
+        private TestSettings(DistributedSettings original, GitExtSettingsCache cache, string directory)
         {
             _original = original;
             _cache = cache;
             _directory = directory;
         }
 
-        public static FixtureSettings Install()
+        public static TestSettings Install()
         {
             AppSettings.TestAccessor accessor = AppSettings.GetTestAccessor();
             string directory = Path.Combine(Path.GetTempPath(), $"GitExtensions.TestSettings-{Guid.NewGuid():N}");
             Directory.CreateDirectory(directory);
             GitExtSettingsCache cache = GitExtSettingsCache.Create(Path.Combine(directory, "GitExtensions.settings"));
-            FixtureSettings fixtureSettings = new(accessor.SettingsContainer, cache, directory);
+            TestSettings fixtureSettings = new(accessor.SettingsContainer, cache, directory);
             accessor.SettingsContainer = new DistributedSettings(lowerPriority: null, cache, SettingLevel.Unknown);
 
             // CurrentTranslation is a separate static override that tests set to exercise other languages; it must
