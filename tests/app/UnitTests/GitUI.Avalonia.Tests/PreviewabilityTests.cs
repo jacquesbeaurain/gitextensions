@@ -199,7 +199,9 @@ public sealed class PreviewabilityTests
 
         actionableCount.Should().BeGreaterThan(0);
         unnamedControls.Should().BeEmpty(
-            "every actionable control exposed by a constructible AXAML view needs a useful automation name");
+            "every actionable control exposed by a constructible AXAML view needs a useful automation name:{0}{1}",
+            Environment.NewLine,
+            string.Join(Environment.NewLine, unnamedControls));
     }
 
     private static PreviewabilityResult Construct(ViewDescriptor view)

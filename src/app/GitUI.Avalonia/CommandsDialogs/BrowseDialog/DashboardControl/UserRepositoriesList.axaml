@@ -4,7 +4,8 @@
              xmlns:wf="using:GitUI.Compat.WinFormsControls"
              xmlns:controls="using:GitUI.UserControls"
              xmlns:properties="using:GitUI.Properties"
-             x:Class="GitUI.CommandsDialogs.BrowseDialog.DashboardControl.UserRepositoriesList">
+             x:Class="GitUI.CommandsDialogs.BrowseDialog.DashboardControl.UserRepositoriesList"
+             AutomationProperties.Name="Recent repositories">
   <UserControl.Resources>
     <ResourceDictionary>
       <ResourceDictionary.ThemeDictionaries>
