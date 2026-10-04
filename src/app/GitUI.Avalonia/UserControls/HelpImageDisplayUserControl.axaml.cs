@@ -152,10 +152,6 @@ public partial class HelpImageDisplayUserControl : GitExtensionsControl
         Window? form = TopLevel.GetTopLevel(this) as Window ?? this.FindLogicalAncestorOfType<Window>();
         if (form is null)
         {
-            // The control already contributes this width when it is first attached. Remember
-            // that pre-attachment state so loading an expanded preference does not add the
-            // same width to the host window a second time.
-            _hostContributionWidth = width;
             return;
         }
 
