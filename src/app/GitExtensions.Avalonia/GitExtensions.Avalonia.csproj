@@ -8,6 +8,7 @@
     <UseWindowsForms>false</UseWindowsForms>
     <RootNamespace>GitExtensions</RootNamespace>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ApplicationIcon>$(RepoRoot)setup\assets\Logo\git-extensions-logo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
