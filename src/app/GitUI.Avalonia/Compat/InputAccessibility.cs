@@ -122,6 +122,16 @@ internal static class InputAccessibility
         host.AddHandler(InputElement.KeyUpEvent, HandleContextMenuKey, RoutingStrategies.Bubble);
     }
 
+    /// <summary>Names controls that were added to <paramref name="host"/> after <see cref="Apply"/> ran.</summary>
+    internal static void RefreshAutomationNames(Control host)
+    {
+        ArgumentNullException.ThrowIfNull(host);
+        foreach (Control control in EnumerateControls(host))
+        {
+            ApplyAutomationProperties(control);
+        }
+    }
+
     private static void ApplyRadioButtonTabStop(RadioButton radioButton)
         => KeyboardNavigation.SetIsTabStop(radioButton, radioButton.IsChecked == true);
 

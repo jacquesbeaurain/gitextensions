@@ -140,6 +140,7 @@ public sealed partial class FormBrowse : GitModuleForm, IBrowseRepo
         InitializeComplete();
         InitMenusAndToolbars(revFilter: null, pathFilter: null);
         InitializeToolbarsMenus();
+        InputAccessibility.RefreshAutomationNames(this);
     }
 
     public FormBrowse(IGitUICommands commands)
