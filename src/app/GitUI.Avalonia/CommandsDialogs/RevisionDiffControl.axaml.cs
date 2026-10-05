@@ -129,7 +129,7 @@ public partial class RevisionDiffControl : GitModuleControl, IRevisionGridFileUp
             DiffFiles.StoreNextItemToSelect();
         }
 
-        DiffFiles.InvokeAndForget(async () =>
+        _taskManager.FileAndForget(async () =>
         {
             await SetDiffsAsync(revisions);
 
@@ -275,7 +275,7 @@ public partial class RevisionDiffControl : GitModuleControl, IRevisionGridFileUp
     public void DisplayDiffTab(IReadOnlyList<GitRevision> revisions)
     {
         _displayedRevisions = revisions;
-        DiffFiles.InvokeAndForget(async () =>
+        _taskManager.FileAndForget(async () =>
         {
             await SetDiffsAsync(revisions);
             await _taskManager.JoinableTaskFactory.SwitchToMainThreadAsync();
