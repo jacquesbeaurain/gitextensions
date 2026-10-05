@@ -66,7 +66,7 @@ cat > "$contents_directory/Info.plist" <<EOF
 <plist version="1.0">
 <dict>
   <key>CFBundleDisplayName</key>
-  <string>Git Extensions Avalonia</string>
+  <string>Git Extensions</string>
   <key>CFBundleExecutable</key>
   <string>GitExtensions.Avalonia</string>
   <key>CFBundleIconFile</key>
@@ -76,7 +76,7 @@ cat > "$contents_directory/Info.plist" <<EOF
   <key>CFBundleInfoDictionaryVersion</key>
   <string>6.0</string>
   <key>CFBundleName</key>
-  <string>Git Extensions Avalonia</string>
+  <string>Git Extensions</string>
   <key>CFBundlePackageType</key>
   <string>APPL</string>
   <key>CFBundleShortVersionString</key>

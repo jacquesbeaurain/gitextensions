@@ -1,5 +1,7 @@
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 using GitCommands;
@@ -55,6 +57,11 @@ public partial class App : Application
             BugReportInvoker.ExecutorProvider = Program.ServiceContainer.GetRequiredService<IGitExecutorProvider>();
             GitUICommands commands = new(Program.ServiceContainer, module);
             desktop.ShutdownMode = ShutdownMode.OnExplicitShutdown;
+            if (OperatingSystem.IsMacOS())
+            {
+                InstallMacApplicationMenu(commands);
+            }
+
             desktop.Exit += (_, _) =>
             {
                 BugReportInvoker.IgnoreFailedToLoadAnAssembly = true;
@@ -64,6 +71,28 @@ public partial class App : Application
         }
 
         base.OnFrameworkInitializationCompleted();
+    }
+
+    /// <summary>
+    /// Fills the macOS application menu (the one titled with the app name) with About and Settings.
+    /// Avalonia supplies Hide, Hide Others, Show All and Quit around these items.
+    /// </summary>
+    private void InstallMacApplicationMenu(GitUICommands commands)
+    {
+        // Used by the native application menu for its title and its "About"/"Hide"/"Quit" captions.
+        Name = "Git Extensions";
+
+        NativeMenuItem about = new("About Git Extensions");
+        about.Click += (_, _) => commands.RunCommand(["gitex", "about"]);
+
+        NativeMenuItem settings = new("Settings…")
+        {
+            Gesture = new KeyGesture(Key.OemComma, KeyModifiers.Meta),
+        };
+        settings.Click += (_, _) => commands.StartSettingsDialog(owner: null);
+
+        NativeMenu appMenu = [about, new NativeMenuItemSeparator(), settings];
+        NativeMenu.SetMenu(this, appMenu);
     }
 
     private static void RunStartup(
