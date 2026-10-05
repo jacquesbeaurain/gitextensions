@@ -2180,9 +2180,6 @@ public sealed class FormBrowseTests
             form.Show();
             await WaitUntilAsync(() => form.RevisionGrid.SelectedRevision?.IsArtificial == true);
 
-            // Toggling skips artificial commits without changes, and the change count arrives asynchronously after the load.
-            await WaitUntilAsync(() => form.RevisionGrid.GetChangeCount(ObjectId.WorkTreeId)?.HasChanges == true);
-
             MenuItem navigate = GetMainMenuItem(form, "navigateToolStripMenuItem");
             MenuItem goToCurrent = GetTaggedMenuItem(navigate, "GotoCurrentRevision");
             MenuItem toggleArtificial = GetTaggedMenuItem(navigate, "ToggleBetweenArtificialAndHeadCommits");
@@ -2195,9 +2192,6 @@ public sealed class FormBrowseTests
             navigate.RaiseEvent(new RoutedEventArgs(MenuItem.SubmenuOpenedEvent));
             toggleArtificial.IsEnabled.Should().BeTrue();
             toggleArtificial.RaiseEvent(new RoutedEventArgs(MenuItem.ClickEvent));
-
-            // The grid applies the selection asynchronously after the menu command.
-            await WaitUntilAsync(() => form.RevisionGrid.SelectedRevision?.IsArtificial == true);
             form.RevisionGrid.SelectedRevision!.IsArtificial.Should().BeTrue();
         }
         finally
