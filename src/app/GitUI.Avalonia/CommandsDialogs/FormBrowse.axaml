@@ -370,12 +370,12 @@
               <wf:ToolStripMenuItem x:Name="rebaseToolStripMenuItem1" Header="Pull - _rebase">
                 <MenuItem.Icon><Image Classes="gitextensions-icon-16" Source="{x:Static properties:Images.PullRebase}" /></MenuItem.Icon>
               </wf:ToolStripMenuItem>
-              <wf:ToolStripMenuItem x:Name="fetchToolStripMenuItem"
+              <wf:ToolStripMenuItem x:Name="fetchToolStripMenuItem" compat:TranslationCompat.UseToolTipText="True"
                                     Header="_Fetch"
                                     ToolTip.Tip="Fetch branches and tags">
                 <MenuItem.Icon><Image Classes="gitextensions-icon-16" Source="{x:Static properties:Images.PullFetch}" /></MenuItem.Icon>
               </wf:ToolStripMenuItem>
-              <wf:ToolStripMenuItem x:Name="fetchAllToolStripMenuItem" Header="Fetch _all">
+              <wf:ToolStripMenuItem x:Name="fetchAllToolStripMenuItem" compat:TranslationCompat.UseToolTipText="True" Header="Fetch _all">
                 <MenuItem.Icon><Image Classes="gitextensions-icon-16" Source="{x:Static properties:Images.PullFetchAll}" /></MenuItem.Icon>
                 <ToolTip.Tip>Fetch branches and tags from all remote repositories</ToolTip.Tip>
               </wf:ToolStripMenuItem>
